@@ -10,20 +10,20 @@
 <body>
     <div class="container">
         <form>
-            <div class="line">
-                <label for="ile">Ile razy:</label>
+            <div class="line mb-3">
+                <label for="ile" class="form-label">Ile razy:</label>
                 <input type="number" name="ile" id="ile" step="1" min="1" max="100">
             </div>
-            <div class="line" class="form-control">
-                <label for="tekst">Podaj tekst: </label>
+            <div class="line mb-3" class="form-control">
+                <label for="tekst" class="form-label">Podaj tekst: </label>
                 <input type="text" name="tekst" id="tekst">
             </div>
-            <div class="line">
+            <div class="line mb-3">
                 <label for="tekst">Wybierz typ listy: </label><br>
-                <input type="radio" name="lista" > Lista numerowana<br>
-                <input type="radio" name="lista" > Lista nie numerowana<br>
+                <input type="radio" name="lista" class="form-check-input ms-2" > Lista numerowana<br>
+                <input type="radio" name="lista" class="form-check-input ms-2" > Lista nie numerowana<br>
             </div>
-            <div class="line"><input type="submit" value="Generuj" id="gener"></div>
+            <div class="line mb-3"><input type="submit" value="Generuj" id="gener"></div>
         </form>
         <div class="badge-info" id="info">
             Tu będzie lista
