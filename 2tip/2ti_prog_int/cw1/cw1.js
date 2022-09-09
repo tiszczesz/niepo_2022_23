@@ -33,3 +33,7 @@ function createList(data){
     });
    return ol; 
 }
+
+document.querySelector("div").onclick = function(){
+    alert("fffff");
+}

@@ -3,4 +3,8 @@ body{
 }
 div:first-child{
     border: solid 1px black;
+    cursor: pointer;
+}
+div:first-child:hover{
+    background-color: cadetblue;
 }
