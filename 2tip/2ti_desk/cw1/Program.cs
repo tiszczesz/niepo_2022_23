@@ -7,4 +7,8 @@ int b = 56;
 Console.WriteLine("noname = "+noname);
 int wynik = a + b;
 Console.WriteLine($"{a} + {b} = {wynik}");
+Console.WriteLine($"{a} - {b} = {wynik}");
+Console.WriteLine($"{a} * {b} = {wynik}");
+Console.WriteLine($"{a} / {b} = {wynik}");
 Console.WriteLine(a + " + " + b + " = " + wynik);
+
