@@ -3,13 +3,18 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import Compo1 from './MyComponents/Compo1';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
   <React.StrictMode>
-    <App />
+    <h1>Adam Nowak</h1>
+    <h2>Klasa 4TI</h2>
+    <h3>Rok szkolny 2022/23</h3>
+    <hr />
+    <Compo1 />
   </React.StrictMode>
 );
 
