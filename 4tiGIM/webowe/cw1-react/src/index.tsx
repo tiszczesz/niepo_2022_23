@@ -4,6 +4,7 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import Compo1 from './MyComponents/Compo1';
+import Image from './MyComponents/Image';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -15,6 +16,7 @@ root.render(
     <h3>Rok szkolny 2022/23</h3>
     <hr />
     <Compo1 />
+    <Image />
   </React.StrictMode>
 );
 
