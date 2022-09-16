@@ -60,6 +60,7 @@ fun cw24(){
     for (i in primals){
         print(i.toString()+" ")
     }
+    println("Ilość liczb pierwszych: "+primals.size)
 }
 fun isPrimal(number:Int):Boolean {
     if(number==1) return false;
