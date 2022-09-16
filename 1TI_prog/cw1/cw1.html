@@ -1,18 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
+  </head>
+  <body>
     <script>
-        //alert("hello");
-        const firstname = prompt("Podaj imię");
-        const lastname = prompt("Podaj nazwisko");
-        document.write("<h1>Witaj "+firstname+" "+lastname+"</h1>");
-        document.write(`<h1>Witaj ${firstname} ${lastname}</h1>`);
+      //alert("hello");
+      const firstname = prompt('Podaj imię');
+      const lastname = prompt('Podaj nazwisko');
+      const age = parseInt(prompt('Podaj wiek'));
+      // const a = parseInt(prompt("Podaj a"));
+      //  const b = parseInt(prompt("Podaj b"));
+      //  console.log(a+b);
+      console.log('typ age: ' + typeof age);
+      console.log('wartosc age: ' + age);
+      if (isNaN(age)) {
+        console.log('Nie podano liczby');
+      } else {
+        console.log('Podano liczbe');
+        if (age >= 18) {
+          document.write(
+            '<h1>Witaj ' + firstname +' ' +       lastname +  ' osoba pelnoletniaa</h1>'
+          );
+        }
+      }
+      document.write('<h1>Witaj ' + firstname + ' ' + lastname + '</h1>');
+      document.write(`<h1>Witaj ${firstname} ${lastname}</h1>`);
     </script>
-</body>
+  </body>
 </html>
