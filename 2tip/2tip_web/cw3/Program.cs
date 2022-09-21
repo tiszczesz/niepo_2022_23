@@ -25,6 +25,13 @@ void ShowOnly(string[] dane,int length){
         if(item.Length>length) Console.WriteLine(item);
     }
 }
+string[] ShowOnlyGirls(string[] dane){
+    return dane.Where(i=>i.EndsWith("a")).ToArray();
+}
+
+foreach(var elem in ShowOnlyGirls(document)){
+    Console.WriteLine($"Kobieta: {elem}");
+}
 ShowAll(document);
 HelloAll(document,500);
 ShowOnly(document,7);
