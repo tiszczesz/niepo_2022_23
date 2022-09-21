@@ -1,15 +1,15 @@
 type Props = {
-    date:Date,
-    price:number
+    date: Date,
+    price: number
 }
 
-const MyComponent2 = (d:Props) => {
+const MyComponent2 = (d: Props) => {
     return (
         <>
-        <h1>MyComponent2 {d.date.toLocaleDateString()}</h1>
-        <h3>My price={d.price}</h3>
+            <h1>MyComponent2 {d.date.toLocaleDateString()}</h1>
+            <h3>My price={d.price}</h3>
         </>
-        
+
     )
 }
 

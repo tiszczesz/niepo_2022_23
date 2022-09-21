@@ -1,4 +1,4 @@
-import React from "react";
+
 import Sun from "./Images/sloneczko.jpg";
 type Props = {
     napis : string
