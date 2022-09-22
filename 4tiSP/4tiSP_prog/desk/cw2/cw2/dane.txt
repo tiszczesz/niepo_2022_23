@@ -1,3 +1,5 @@
-Informacje o uzytkowniku: rybka haslo: qaz niezalogowany
-Informacje o uzytkowniku: romek haslo: 123 zalogowany
-Informacje o uzytkowniku: bomek haslo: 567 zalogowany
+rybka|qaz|niezalogowany
+romek|123|zalogowany
+bomek|567|zalogowany
+tomaszek|qazqaz|zalogowany
+

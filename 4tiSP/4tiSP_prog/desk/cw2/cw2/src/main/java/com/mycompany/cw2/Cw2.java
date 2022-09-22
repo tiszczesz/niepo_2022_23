@@ -2,7 +2,6 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Project/Maven2/JavaApp/src/main/java/${packagePath}/${mainClassName}.java to edit this template
  */
-
 package com.mycompany.cw2;
 
 import java.io.FileWriter;
@@ -26,7 +25,8 @@ public class Cw2 {
         //cw2_1();
         cw3_1();
     }
-    public static void cw2_1(){
+
+    public static void cw2_1() {
         Scanner sc = new Scanner(System.in);
         System.out.print("Podaj imie: ");
         String firstname = sc.next();
@@ -34,38 +34,36 @@ public class Cw2 {
         String lastname = sc.next();
         System.out.println("i tak dalej.....");
     }
-    public static void cw3_1(){        
+
+    public static void cw3_1() {
         List<User> users = new ArrayList<>(Arrays.asList(new User("rybka", "qaz"),
-                          new User("romek", "123",true),new User("bomek", "567",true)));
-        List<User> loginUsers = users.stream().filter(u->u.isIsLogin())
+                new User("romek", "123", true), new User("bomek", "567", true)));
+        List<User> loginUsers = users.stream().filter(u -> u.isIsLogin())
                 .collect(Collectors.toList());
-        for(User u : users){
+        for (User u : users) {
             System.err.println(u);
         }
         System.err.println("\nTylko zalogowani ----------------");
-        for(User u : loginUsers){
+        for (User u : loginUsers) {
             System.err.println(u);
         }
-        
+
         //do pliku
-         FileWriter fw;
-        try {
-            fw = new FileWriter("dane.txt");
-            PrintWriter pw = new PrintWriter(fw);
-            for(User u : users){
-                pw.print(u+"\n");
-            }
-            pw.close();
-        } catch (IOException ex) {
-            Logger.getLogger(Cw2.class.getName()).log(Level.SEVERE, null, ex);
+        //FileOperations.SaveToFile("dane.txt", users);
+        List<User> result = FileOperations.GetFromFile("dane.txt");
+        System.out.println(" ================= z pliku ====================");
+        for (User u : result) {
+            System.err.println(u);
         }
-         
+
     }
 }
-class User{
+
+class User {
+
     private String login;
     private String password;
-    private boolean isLogin=false;
+    private boolean isLogin = false;
 
     public User(String login, String password, boolean isLogin) {
         this.login = login;
@@ -84,8 +82,8 @@ class User{
 
     @Override
     public String toString() {
-        return "Informacje o uzytkowniku: "+login+" haslo: "+password
-                +(isLogin ? " zalogowany":" niezalogowany");
+        return login + "|" + password
+                + (isLogin ? "|zalogowany" : "|niezalogowany");
     }
 
     public void setPassword(String password) {
@@ -94,16 +92,46 @@ class User{
 
     public void setIsLogin(boolean isLogin) {
         this.isLogin = isLogin;
-    } 
+    }
 }
-enum Languages{
-   english,
-   polish,
-   spanish,
-   russian,
-   czech
+
+enum Languages {
+    english,
+    polish,
+    spanish,
+    russian,
+    czech
 }
-class Film{
+
+class Film {
+
     private Languages lang;
-    
+    private String title;
+    private String author;
+
+    private int length;
+
+    public Film(Languages lang, String title, String author, int length) {
+        this.lang = lang;
+        this.title = title;
+        this.author = author;
+        this.length = length;
+    }
+
+    public Languages getLang() {
+        return lang;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public String getAuthor() {
+        return author;
+    }
+
+    public int getLength() {
+        return length;
+    }
+
 }
