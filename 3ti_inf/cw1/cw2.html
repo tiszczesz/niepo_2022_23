@@ -11,7 +11,8 @@
       const a = parseInt(prompt('Podaj a'));
       const b = parseInt(prompt('Podaj b'));
       //if (a == null || b == null) { //dla napisów
-      if (isNaN(a) || isNaN(b)) { //dla liczb
+      if (isNaN(a) || isNaN(b)) {
+        //dla liczb
         document.write("Musisz potwierdzić przyciskiem 'OK' i wpisać liczbę");
       } else {
         document.writeln('<div>Wartość a = ' + a + '</div>');
@@ -19,7 +20,11 @@
         document.writeln(`<div>${a} + ${b} = ${a + b}</div>`);
         document.writeln(`<div>${a} - ${b} = ${a - b}</div>`);
         document.writeln(`<div>${a} * ${b} = ${a * b}</div>`);
-        document.writeln(`<div>${a} / ${b} = ${a / b}</div>`);
+        const result =
+          b != 0
+            ? (a / b).toFixed(2)
+            : "<span style='color:red;'>nie dzielimy przez zero!!!</span>";
+        document.writeln(`<div>${a} / ${b} = ${result}</div>`);
       }
       console.log(typeof a);
       console.log(typeof b);
