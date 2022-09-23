@@ -4,8 +4,7 @@ const todos = [
     "Napisać cały kod",
     "Zapisać zmiany",
     "Otworzyć w przeglądarce","sdfds fs sdfsdf"];
-const myDiv = document
-     .createElement("div");
+const myDiv = document.createElement("div");
 myDiv.innerHTML = "<h3>To jest z JS</h3>";
 console.log(myDiv);
 document.body.appendChild(myDiv);
@@ -15,10 +14,9 @@ myDiv.appendChild(createList(todos));
 
 function generList(data){
     let html = "<ul>";
-    for(let i=0; i<todos.length; i++){
-        html += `<li>${todos[i]}</li>`;
+    for(let i=0; i<data.length; i++){
+        html += `<li>${data[i]}</li>`;
     }
-
     return html + "</ul>";
 }
 
