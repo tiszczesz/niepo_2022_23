@@ -15,7 +15,7 @@ class MainActivity : AppCompatActivity() {
         val obrazek = findViewById<ImageView>(R.id.imageView1)
         Log.d("TAAAAG",obrazek.toString())
         obrazek.setOnClickListener {
-            Log.d("ffff","fffffffff")
+//            Log.d("ffff","fffffffff")
             Toast.makeText(this@MainActivity,"Jestem zebra ",Toast.LENGTH_SHORT).show()
         }
 
