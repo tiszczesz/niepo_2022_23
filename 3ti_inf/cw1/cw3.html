@@ -11,12 +11,21 @@
     <div></div>
     <script>
         setTimeout(changeColor,2000);
+        setInterval(setRandomColor,3000);
+        //-------------------------------------
         function changeColor(){           
             //document.write("<h3>Hello JS</h3>"); 
             document.querySelector("div").innerHTML = "<h3>Hello JS</h3>";
             document.body.style.backgroundColor = "lightgreen";
         }
-        
+
+        function setRandomColor(){
+            const red = Math.floor(Math.random()*256);
+            const green = Math.floor(Math.random()*256);
+            const blue = Math.floor(Math.random()*256);
+            console.log(`rgb(${red},${green},${blue})`);
+            document.querySelector("div").style.color = `rgb(${red},${green},${blue})`;
+        }
     </script>
 </body>
 </html>
