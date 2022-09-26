@@ -18,3 +18,6 @@ label{
     width: 100px;
     text-align: right;
 }
+input[type=range]{
+    width: 400px;
+}
