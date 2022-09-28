@@ -19,7 +19,7 @@ class Publish
             Console.WriteLine("Zbior ksiazek wydawnictwa: " + Name);
             foreach (var book in Books)
             {
-                Console.WriteLine(book);
+                Console.WriteLine("\t"+book);
             }
         }
         else
@@ -31,6 +31,7 @@ class Publish
     {
         if (book != null)
         {
+            book.MyPublish = this;
             Books.Add(book);
         }
     }

@@ -5,6 +5,7 @@ class Book{
         get{ return title.ToUpper();}
         set{ title = value;}
     }
+    public Publish MyPublish { get; set; }
     private decimal price = 33.89M;
     public decimal Price{
         get {return price;}
@@ -30,7 +31,8 @@ class Book{
         Price = price;
     }
     public override string ToString(){
-        return $"Ksiazka: {Title} napisana przez: {Author} w cenie: {Price} PLN";
+        var publish = MyPublish!=null?MyPublish.Name:"";
+        return $"Ksiazka: {Title} napisana przez: {Author} w cenie: {Price} PLN w wydawnictwie: {publish}";
     }
     
 }

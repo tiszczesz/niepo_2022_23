@@ -6,4 +6,6 @@
 // Test t1 = new Test();
 // Console.WriteLine(t1);
 List<Publish> publishes = Library.GetAllPublish();
-publishes[0].ShowAll();
+foreach(var p in publishes){
+    p.ShowAll();
+}
