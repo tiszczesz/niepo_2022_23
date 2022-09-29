@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">  
+    <title>Ćwiczenie 4</title>
+    <link rel="stylesheet" href="cw4.css">
+</head>
+<body>
+    <h1>Ćwiczenie 4</h1>
+    <div id="info"></div>
+    <script>
+        const myInfo = document.querySelector("div#info");
+        console.log(myInfo);
+       // myInfo.innerHTML = "<h2>To jest element h2</h2>";
+       // myInfo.innerText = "<h2>To jest element h2</h2>";
+       myInfo.innerText = "Witaj podane imie dzisiaj mamy: "+(new Date().toLocaleDateString());
+      // myInfo.innerText = "Dzisiaj mamy: "+(Date.now()/(3600*24*365*1000));
+    </script>
+</body>
+</html>
