@@ -9,7 +9,7 @@ type Props = {}
 function App(props: Props) {
   return (
     <>
-      <MyComponent napis='To jest property ale trochę zmienione' />
+      <MyComponent napis='rrr rrrrrrr' />
       <MyComponent2 date={new Date()} price={56.99} />
       <MyComponent3 result={34+9} />
     </>
