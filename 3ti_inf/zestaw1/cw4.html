@@ -13,7 +13,8 @@
         console.log(myInfo);
        // myInfo.innerHTML = "<h2>To jest element h2</h2>";
        // myInfo.innerText = "<h2>To jest element h2</h2>";
-       myInfo.innerText = "Witaj podane imie dzisiaj mamy: "+(new Date().toLocaleDateString());
+       const imie = prompt("Podaj swoje imię:")
+       myInfo.innerText = "Witaj "+imie+" dzisiaj mamy: "+(new Date().toLocaleDateString());
       // myInfo.innerText = "Dzisiaj mamy: "+(Date.now()/(3600*24*365*1000));
     </script>
 </body>
