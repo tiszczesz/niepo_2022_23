@@ -47,7 +47,7 @@ public class FileOperations {
             String line;
             do{
                 line = reader.readLine();
-                if(line.isBlank()) continue;
+                if(line==null || line.isBlank()) continue;
                 String fromLine[] = line.split("\\|");
                 Boolean isLogged = fromLine[2].equals("zalogowany");
                 result.add(new User(fromLine[0], fromLine[1],isLogged));
