@@ -13,15 +13,20 @@
         const book1 = {
             title:"ABC programowania obiektowego",
             author:"Adam Nowak",
-            price: 23.99
-        }
+            price: 23.99,
+            getTitleUpper: function(){
+                return this.title.toUpperCase();
+            }
+        } 
+        document.write("<br>"+book1.getTitleUpper());
         //debugger;
-        document.write(`obiekt book1 ${book1.title} ${book1.author} ${book1.price}zł`);
+        document.write(`<div>obiekt book1 ${book1.title} ${book1.author} ${book1.price}zł</div>`);
         
         book1.show = function(){
-            return `To jest show ${this.title}`;
+            return `To jest show ${this.title}<br>`;
         }
-        document.write(book1.show());
+        document.write("<br>"+book1.show());
+       
     </script>
 </body>
 </html>
