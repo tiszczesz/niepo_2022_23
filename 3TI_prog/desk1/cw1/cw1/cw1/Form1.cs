@@ -58,5 +58,13 @@ namespace cw1
                 }
             }
         }
+
+        private void saveFileDialog1_FileOk(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            if(saveFileDialog1.ShowDialog(this) == DialogResult.OK)
+            {
+                File.WriteAllText(fileName, saveFileDialog1.FileName);
+            }
+        }
     }
 }
