@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ćw 3 - obiekty w JS</title>
+</head>
+<body>
+    <h1>Ćw 3 - obiekty w JS</h1>
+    <h2>Tworzenie obiektów literalnie</h2>
+    <script>
+        const book1 = {
+            title:"ABC programowania obiektowego",
+            author:"Adam Nowak",
+            price: 23.99
+        }
+        //debugger;
+        document.write(`obiekt book1 ${book1.title} ${book1.author} ${book1.price}zł`);
+        
+        book1.show = function(){
+            return `To jest show ${this.title}`;
+        }
+        document.write(book1.show());
+    </script>
+</body>
+</html>
