@@ -1,20 +1,19 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.css'
 import './App.css';
+import { CardComponent } from './Components/CardComponent';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { AnotherComponent } from './Components/AnotherComponent';
 
 function App() {
   return (
-    <div className='container'>
-      <div className="card" >
-        <div className="card-body">
-          <h5 className="card-title" style={{ color: "green" }}>Okno główne</h5>
-          <h6 className="card-subtitle mb-2 text-muted">Fajne okno</h6>
-          <p className="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam dicta optio aliquam porro, quam voluptatibus quas pariatur repudiandae. Quidem, corporis laudantium? Reiciendis nisi, deserunt consequatur repellat in error odit porro!.</p>
-          <a href="#" className="card-link">Card link</a>
-          <a href="#" className="card-link">Another link</a>
-        </div>
-      </div>
-    </div>
+    <BrowserRouter>
+    <Routes>
+       <Route path='/' element={<CardComponent/>} />
+       <Route path='another' element={<AnotherComponent/>}/>
+    </Routes>
+     
+   </BrowserRouter>
   );
 }
 
