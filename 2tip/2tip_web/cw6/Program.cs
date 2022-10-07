@@ -10,7 +10,7 @@ s1.AddTopic("Matematyka");
 s1.AddTopic("fizyka");
 s1.AddTopic("Dfdfdfdf");
 s1.AddTopic("Rdsfdsf");
-
+Console.WriteLine(s1);
 // Console.WriteLine(s1);
 // s1.ShowSecret();
 // p1.getSecret();
