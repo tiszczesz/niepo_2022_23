@@ -1,32 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Ćw 3 - obiekty w JS</title>
-</head>
-<body>
+  </head>
+  <body>
     <h1>Ćw 3 - obiekty w JS</h1>
     <h2>Tworzenie obiektów literalnie</h2>
     <script>
-        const book1 = {
-            title:"ABC programowania obiektowego",
-            author:"Adam Nowak",
-            price: 23.99,
-            getTitleUpper: function(){
-                return this.title.toUpperCase();
-            }
-        } 
-        document.write("<br>"+book1.getTitleUpper());
-        //debugger;
-        document.write(`<div>obiekt book1 ${book1.title} ${book1.author} ${book1.price}zł</div>`);
-        
-        book1.show = function(){
-            return `To jest show ${this.title}<br>`;
-        }
-        document.write("<br>"+book1.show());
-       
+       const book1 = {
+           title:"ABC programowania obiektowego",
+           author:"Adam Nowak",
+           price: 23.99,
+           getTitleUpper: function(){
+               return this.title.toUpperCase();
+           }
+       }
+       document.write("<br>"+book1.getTitleUpper());
+       //debugger;
+       document.write(`<div>obiekt book1 ${book1.title} ${book1.author} ${book1.price}zł</div>`);
+
+       book1.show = function(){
+           return `To jest show ${this.title}<br>`;
+       }
+       document.write("<br>"+book1.show());
+       const ob = GetObject();
+       console.log(ob.color);
+      function GetObject(){
+       return {
+           width:120,
+           height:300,
+           color: "red"
+       };
+      }
     </script>
-</body>
+  </body>
 </html>
