@@ -75,10 +75,44 @@
         android:layout_height="wrap_content"
         android:text="Tu będzie wynik"
         android:textColor="@color/purple_700"
-        android:textSize="24sp"
+        android:textSize="28sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <RadioGroup
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+
+        app:layout_constraintBottom_toTopOf="@+id/tvResult"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnAdd" />
+        app:layout_constraintTop_toBottomOf="@+id/btnAdd">
+
+        <RadioButton
+            android:id="@+id/rbPlus"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="48dp"
+            android:text="Dodawanie" />
+
+        <RadioButton
+            android:id="@+id/rbMinus"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Odejmowanie" />
+
+        <RadioButton
+            android:id="@+id/rbPomnoz"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Mnożenie" />
+
+        <RadioButton
+            android:id="@+id/rbPodziel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Dzielenie" />
+    </RadioGroup>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
