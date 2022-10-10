@@ -9,8 +9,14 @@
   <body>
     <h1>Pętla for(... ; .... ; ...){....}</h1>
     <script>
-      for (let i = 0; i < 10; i++) {
+      for (let i = 0; i < 10; i++ /* i = i + 1   */) {
         document.write(`<div> i = ${i}</div>`);
+      }
+      for(let i=1 ; i<=6 ;i++){
+        document.write(`<h${i}>Nagłówek ${i} </h${i}>`);
+      }
+      for(let i=6 ; i>0 ;i--){
+        document.write('<h'+i+'>Nagłówek '+i+' </h'+i+'>');
       }
     </script>
   </body>
