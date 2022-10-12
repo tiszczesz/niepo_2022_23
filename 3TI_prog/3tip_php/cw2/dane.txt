@@ -1,0 +1,7 @@
+Anna|Wanna|23|3600
+Monika|Klika|27|3600
+Roman|Rynek|21|4440
+Grażyna|Dzbanek|36|2900
+Henryk|Łąka|55|2000
+Teresa|Wroński|44|2100
+Damian|Tymek|21|3900
