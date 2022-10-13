@@ -1,0 +1,12 @@
+.green{
+  color:green;
+}
+label{
+  display: inline-block;
+  text-align: right;
+  margin-right: 5px;
+  width: 150px;
+}
+.line{
+  margin: 20px;
+}
