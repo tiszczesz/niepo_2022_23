@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-
+import { divisions } from './data';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.css';
 import m1 from './media/m1.jpg';
@@ -8,7 +8,7 @@ import m2 from './media/m2.jpg';
 function App() {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
-  const [division, setdivision] = useState("1A");
+  // const [division, setdivision] = useState("1A");
   return (
     <div className="container">
       <h1 className='green'>To maja fajna strona</h1>
@@ -32,11 +32,14 @@ function App() {
             }} value={lastName}/>
           </div>
           <div className="line">
-            <label htmlFor="division">Podaj nazwisko: </label>
-            <input type="text" id="division" onChange={(e) => {
+            <label htmlFor="division">Wybierz klasę: </label>
+            {/* <input type="text" id="division" onChange={(e) => {
               console.log(e.target.value);
               setdivision(e.target.value);
-            }} value={division}/>
+            }} value={division}/> */}
+            <select>
+              {divisions.map((division,index)=>(<option>{division}</option>))}
+            </select>
           </div>
         </form>
         <div className='col'>
@@ -45,7 +48,7 @@ function App() {
         </div>
       </div>
       <h3>Kandydat do szkoły:</h3>
-      <div>Imię: {firstName.toUpperCase()} Nazwisko: {lastName.toUpperCase()} do klasy: {division}</div>
+      <div>Imię: {firstName.toUpperCase()} Nazwisko: {lastName.toUpperCase()} </div>
     </div>
   );
 }
