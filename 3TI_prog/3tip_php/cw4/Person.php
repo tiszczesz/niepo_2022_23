@@ -16,4 +16,16 @@ class Person
                 date( "Y",strtotime(filter_input(INPUT_POST, 'birthDate'))
             ));
     }
+    public function toFileLine():string {
+        return implode('|',[$this->firstName,$this->lastName,$this->birthDay]);
+    }
+    public function getFirstName(){
+        return $this->firstName;
+    }
+    public function getLastName(){
+        return $this->lastName;
+    }
+    public function getBirthDay(){
+        return $this->birthDay;
+    }
 }
