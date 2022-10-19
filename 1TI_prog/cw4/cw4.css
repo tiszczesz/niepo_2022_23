@@ -1,0 +1,28 @@
+.container{
+    margin: 20px;
+}
+.line{
+    margin: 10px;
+}
+label{
+    display: inline-block;
+    width: 200px;
+    text-align: right;
+    padding-right: 5px;
+}
+input[type=button]{
+    margin-left: 210px;
+}
+input{
+    width: 160px;
+}
+#info{
+    border: solid gray 1px;
+    border-radius: 10px;
+    height: 200px;
+    background-color: bisque;
+    width: 50%;
+}
+.content{
+    display: flex;
+}
