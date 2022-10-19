@@ -8,7 +8,7 @@ import m2 from './media/m2.jpg';
 function App() {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
-  // const [division, setdivision] = useState("1A");
+  const [divValue, setDivValue] = useState("");
   return (
     <div className="container">
       <h1 className='green'>To maja fajna strona</h1>
@@ -20,7 +20,7 @@ function App() {
             <input type="text" id='firstName'
               onChange={(e) => {
                 console.log(e.target.value);
-                setFirstName(e.target.value);              
+                setFirstName(e.target.value);
               }}
               value={firstName} />
           </div>
@@ -29,7 +29,7 @@ function App() {
             <input type="text" id="lastName" onChange={(e) => {
               console.log(e.target.value);
               setLastName(e.target.value);
-            }} value={lastName}/>
+            }} value={lastName} />
           </div>
           <div className="line">
             <label htmlFor="division">Wybierz klasę: </label>
@@ -37,8 +37,12 @@ function App() {
               console.log(e.target.value);
               setdivision(e.target.value);
             }} value={division}/> */}
-            <select>
-              {divisions.map((division,index)=>(<option>{division}</option>))}
+            <select onChange={(e) => {
+              console.log(e.target.value);
+              setDivValue(e.target.value)
+            }}
+            >
+              {divisions.map((division, index) => (<option value={division} key={index}>{division}</option>))}
             </select>
           </div>
         </form>
@@ -48,7 +52,7 @@ function App() {
         </div>
       </div>
       <h3>Kandydat do szkoły:</h3>
-      <div>Imię: {firstName.toUpperCase()} Nazwisko: {lastName.toUpperCase()} </div>
+      <div>Imię: {firstName.toUpperCase()} Nazwisko: {lastName.toUpperCase()} klasa: {divValue}</div>
     </div>
   );
 }
