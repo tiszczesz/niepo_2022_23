@@ -22,6 +22,7 @@ input{
     height: 200px;
     background-color: bisque;
     width: 50%;
+    padding: 10px;
 }
 .content{
     display: flex;
