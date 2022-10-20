@@ -9,7 +9,7 @@ class Person{
     age: number;
     //dla ambitnych
     interests:string[];
-    construct(firstname:string, lastname:string, age: number){
+    constructor(firstname:string, lastname:string, age: number){
         this.firstname = firstname;
         .....
     }
