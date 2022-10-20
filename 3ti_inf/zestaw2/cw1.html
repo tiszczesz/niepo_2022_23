@@ -12,12 +12,32 @@
       for (let i = 0; i < 10; i++ /* i = i + 1   */) {
         document.write(`<div> i = ${i}</div>`);
       }
-      for(let i=1 ; i<=6 ;i++){
+      for (let i = 1; i <= 6; i++) {
         document.write(`<h${i}>Nagłówek ${i} </h${i}>`);
       }
-      for(let i=6 ; i>0 ;i--){
-        document.write('<h'+i+'>Nagłówek '+i+' </h'+i+'>');
+      for (let i = 6; i > 0; i--) {
+        document.write('<h' + i + '>Nagłówek ' + i + ' </h' + i + '>');
       }
+    </script>
+    <h1>Pętla while(...){....}</h1>
+    <script>
+      let sum = 0;
+      let counter = 0
+      while(sum<100){
+        let losowa = Math.floor(Math.random()*20); //liczba <0,20)
+        document.write(losowa+" ");
+        sum += losowa;   // sum = sum + losowa
+        counter++;
+      }
+      document.write("suma = "+sum+ " ilosac liczb = "+ counter);
+    </script>
+    <h1>do{....} while(...) Zawsze przynajmniej raz się wykona</h1>
+    <script>
+      let losowa2;
+      do{
+        losowa2 = Math.floor(Math.random()*20);
+        document.write(losowa2+" ");
+      }while(losowa2!=0);
     </script>
   </body>
 </html>
