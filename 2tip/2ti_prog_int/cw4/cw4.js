@@ -33,7 +33,23 @@ function GenerTab(data,className){
 
     return html+"</table>";
 }
+document.forms[0].addEventListener("submit", (e)=>{
+    e.preventDefault();
+    getFromForm();
+    //alert("sasaas");
+    return false;
+});
 document.querySelector("#root").innerHTML = GenerTab(books,'table');
 
+function getFromForm(){
+    const title = document.querySelector("#title").value.trim();
+    const author = document.querySelector("#author").value.trim();
+    const price = parseFloat(document.querySelector("#price").value);
+    const category = document.querySelector("#category").value.trim();
+    
+    books.push(new Book(title,price,author,category));
+    console.log(books);
+    document.querySelector("#root").innerHTML = GenerTab(books,'table');
+}
 
 console.log(books);
