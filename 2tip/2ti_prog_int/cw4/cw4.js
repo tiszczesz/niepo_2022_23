@@ -46,7 +46,8 @@ function getFromForm(){
     const author = document.querySelector("#author").value.trim();
     const price = parseFloat(document.querySelector("#price").value);
     const category = document.querySelector("#category").value.trim();
-    
+    if(title=='') document.querySelector("#title").classList.add('is-invalid');
+    else document.querySelector("#title").classList.remove('is-invalid');
     books.push(new Book(title,price,author,category));
     console.log(books);
     document.querySelector("#root").innerHTML = GenerTab(books,'table');
