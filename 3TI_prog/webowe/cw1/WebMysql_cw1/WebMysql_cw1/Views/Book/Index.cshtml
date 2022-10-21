@@ -1,0 +1,21 @@
+﻿@model List<Book>
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <ol>
+        @foreach (var book in Model)
+        {
+            <li>@book.Title autor: @book.Author cena: @book.Price zł</li>
+        }
+    </ol>
+</head>
+<body>
+</body>
+</html>

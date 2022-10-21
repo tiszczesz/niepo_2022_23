@@ -1,8 +1,15 @@
+using Microsoft.EntityFrameworkCore;
+using WebMysql_cw1.Data;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
-
+string connString = builder.Configuration.GetConnectionString("MySqlConn");
+builder.Services.AddDbContext<BookContext>(options =>
+{
+    options.UseMySql(connString, ServerVersion.AutoDetect(connString));
+});
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -22,6 +29,6 @@ app.UseAuthorization();
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
+    pattern: "{controller=Book}/{action=Index}/{id?}");
 
 app.Run();
