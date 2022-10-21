@@ -27,3 +27,13 @@ input{
 .content{
     display: flex;
 }
+.error{
+    border: solid 2px red;
+    border-radius: 2px;
+    background-color: lightpink;
+}
+.ok{
+    border: solid 1px grey;
+    border-radius: 2px;
+    background-color: white;
+}
