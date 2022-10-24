@@ -1,0 +1,9 @@
+h1{
+    text-align: center;
+    border-bottom: solid 2px burlywood;
+}
+p{
+    padding: 10px;
+    background-color: bisque;
+    cursor: pointer;
+}
