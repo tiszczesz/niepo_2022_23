@@ -1,0 +1,14 @@
+dt{
+    margin: 20px;
+    padding: 10px;
+    text-decoration: underline;
+    color: rgb(29, 82, 42);
+    font-size: 2em;
+    font-weight: bold;
+    cursor: pointer;
+}
+dd{
+    display: none;
+    padding: 5px;
+    background-color: lightgray;
+}

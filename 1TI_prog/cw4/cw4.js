@@ -8,7 +8,7 @@ document.querySelector("#run").addEventListener("click", function () {
    // ClearForm();
     //document.querySelector("#info").innerHTML = firstname;
 });
-
+""
 function ClearForm() {
     document.querySelector("#firstname").value = "";
     document.querySelector("#lastname").value = "";
