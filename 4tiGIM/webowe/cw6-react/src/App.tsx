@@ -13,8 +13,7 @@ function App() {
     <div className='container'>        
         <Range colorProps='red' handlerChange={setColors} indexOfColor={0}/>
         <Range colorProps='green'  handlerChange={setColors} indexOfColor={1}/>
-        <Range colorProps='blue' handlerChange={setColors} indexOfColor={2}/>
-      
+        <Range colorProps='blue' handlerChange={setColors} indexOfColor={2}/>      
     </div>
 
   

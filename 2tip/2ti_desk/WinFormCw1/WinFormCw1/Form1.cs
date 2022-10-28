@@ -1,3 +1,7 @@
+
+
+using System.Text;
+
 namespace WinFormCw1
 {
     public partial class Form1 : Form
@@ -20,6 +24,13 @@ namespace WinFormCw1
         {
             string time = DateTime.Now.ToLocalTime().ToString();
             lblTime.Text = time;
+        }
+
+        private void button2_Click(object sender, EventArgs e) {
+            StringBuilder sb = new StringBuilder();
+            sb.Append(tbFirstName.Text + " " + tbLastName.Text);
+            sb.Append("\nWiek: " + tbAge.Text);
+            lblResult.Text = sb.ToString();
         }
     }
 }
