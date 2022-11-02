@@ -27,6 +27,15 @@ namespace WinFormCw1
         }
 
         private void button2_Click(object sender, EventArgs e) {
+            if (
+                String.IsNullOrEmpty(tbFirstName.Text.Trim()) ||
+                String.IsNullOrEmpty(tbLastName.Text.Trim()) || 
+                String.IsNullOrEmpty(tbAge.Text.Trim())  
+            ) {
+                MessageBox.Show("Brak imienia, nazwiska lub wieku");
+                return;
+            } 
+
             StringBuilder sb = new StringBuilder();
             sb.Append(tbFirstName.Text + " " + tbLastName.Text);
             sb.Append("\nWiek: " + tbAge.Text);

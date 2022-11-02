@@ -1,0 +1,27 @@
+﻿@page
+@model MyApp.Namespace.IndexModel
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Index</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="css/index.css" rel="stylesheet">
+    </head>
+    <body>
+       <h1>Index</h1>
+       <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore nostrum mollitia impedit, odio eveniet repudiandae numquam sunt, corrupti voluptate provident similique dignissimos iusto necessitatibus commodi illo ex reprehenderit ipsam ullam.</div>
+        <div class="info">@Model.FirstName</div>
+        <div>
+            <img src="media/szachy.jpg" alt="">
+        </div>
+        <div>
+            <ol>
+                @foreach (var name in Model.MyNames)
+                {
+                    <li>@name</li>
+                }
+            </ol>
+        </div>
+    </body>
+</html> 
