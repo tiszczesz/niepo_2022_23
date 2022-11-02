@@ -1,11 +1,22 @@
 .container{
   margin: 20px;
   display: flex;
-  justify-content: space-around;
+  
 }
 .rectangle{
   border: solid 1px black;
   width: 100px;
   height: 100px;
-  background-color: lightslategray;
+  background-color: lightslategray;  
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.container>div{
+  margin: 20px;
+}
+.rectangle>span{
+  display: inline-block;
+  vertical-align: middle;
 }
