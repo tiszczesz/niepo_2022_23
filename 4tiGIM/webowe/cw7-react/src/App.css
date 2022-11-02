@@ -1,0 +1,11 @@
+.container{
+  margin: 20px;
+  display: flex;
+  justify-content: space-around;
+}
+.rectangle{
+  border: solid 1px black;
+  width: 100px;
+  height: 100px;
+  background-color: lightslategray;
+}
