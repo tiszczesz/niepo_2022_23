@@ -1,0 +1,1 @@
+export const Dane = ["ala mak kota","dfg dfgdfgd","fghfhfhfhf"];
