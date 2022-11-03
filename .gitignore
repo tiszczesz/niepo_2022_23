@@ -223,3 +223,4 @@ project.lock.json
 # End of core ignore list, below put you custom 'per project' settings (patterns or path)
 #####
 /4tiSP/desk/cw1/target/
+/4tiSP/4tiSP_prog/desk/FirtGUI_sp/FirtGUI_sp/target/
