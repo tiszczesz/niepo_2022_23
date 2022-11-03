@@ -15,6 +15,9 @@ namespace OgloszeniaMVCMysql.Models
             modelBuilder.Entity<Ogloszenia>(entity => { entity.ToTable("ogloszenie"); });
             modelBuilder.Entity<Uzytkownicy>(entity => { entity.ToTable("uzytkownik"); });
             modelBuilder.Entity<Kategorie>(entity => { entity.ToTable("kategorie"); });
+            modelBuilder.Entity<Ogloszenia>()
+                .HasOne(o => o.Uzytkownicy)
+                .WithMany(u => u.Ogloszenias);
         }
     }
 }

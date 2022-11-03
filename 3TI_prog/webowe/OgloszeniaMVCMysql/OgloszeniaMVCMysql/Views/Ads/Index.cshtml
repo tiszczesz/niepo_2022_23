@@ -22,8 +22,15 @@
     <div class="glowny">
         <section id="lewy">
             <h2>
-                    Ogłoszeniodawcy
+                Ogłoszeniodawcy
             </h2>
+            @foreach (var u in Model.Uzytkownicies) {
+                <h3>@u.id @u.imie @u.nazwisko </h3>
+                <p>@u.email</p>
+                <p>Ogłoszenie: @u.Ogloszenias[0].tytul</p>
+
+            }
+           
         </section>
         <section id="prawy">
             <h2>

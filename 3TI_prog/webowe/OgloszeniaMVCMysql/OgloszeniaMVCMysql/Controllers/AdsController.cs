@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using OgloszeniaMVCMysql.Models;
 using OgloszeniaMVCMysql.ViewModels;
 
@@ -13,7 +14,7 @@ namespace OgloszeniaMVCMysql.Controllers
         public IActionResult Index() {
             IndexViewModel indexViewModel = new IndexViewModel();
             indexViewModel.Kategories = _db.Kategories.ToList();
-            var ogloszenia = _db.AllOgloszenia.ToList();
+            indexViewModel.Uzytkownicies = _db.AllUzytkownicy.Where(k => k.id < 4).Include(u=>u.Ogloszenias).ToList();
             return View(indexViewModel);
         }
     }

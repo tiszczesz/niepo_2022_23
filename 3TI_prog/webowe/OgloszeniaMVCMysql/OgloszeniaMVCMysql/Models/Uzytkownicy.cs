@@ -10,6 +10,6 @@ namespace OgloszeniaMVCMysql.Models
         public string nazwisko { get; set; }
         public string telefon { get; set; }
         public string email { get; set; }
-        //public List<Ogloszenia> Ogloszenias { get; set; }
+        public virtual List<Ogloszenia> Ogloszenias { get; set; }
     }
 }
