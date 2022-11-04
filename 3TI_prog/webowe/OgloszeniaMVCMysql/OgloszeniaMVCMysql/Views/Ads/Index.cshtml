@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width" />
     <meta charset="utf-8"/>
     <title>Ogłoszenia drobne</title>
-    <link rel="stylesheet" href="css/site.css"/>
+    <link rel="stylesheet" href="~/css/site.css"/>
 </head>
 <body>
 <header class="baner">
@@ -32,13 +32,17 @@
             }
            
         </section>
+        <section id="srodkowy">
+            <h3>asdsa dsada</h3>
+        </section>
         <section id="prawy">
             <h2>
                 Nasze kategorie
             </h2>
             <ul class="lista">
+                    <li><a asp-action="Index" asp-route-id="-1">Wszystkie</a></li>
                 @foreach (var kategory in Model.Kategories) {
-                    <li>@kategory.nazwa</li>
+                        <li><a asp-action="Index" asp-route-id="@kategory.id">@kategory.nazwa</a></li>
                 }
             </ul>
             <img src="media/ksiazki.jpg" alt="uwolnij swoją książkę"/>
