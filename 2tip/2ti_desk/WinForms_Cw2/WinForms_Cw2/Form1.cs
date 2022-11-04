@@ -15,12 +15,27 @@ namespace WinForms_Cw2
                 lista.Add(i);
             }
 
+           
+        }
+
+        private void GenerateList(List<int> lista) {
             StringBuilder sb = new StringBuilder();
             foreach (var elem in lista) {
                 sb.Append(elem).Append(Environment.NewLine);
             }
 
             textBox1.Text = sb.ToString();
+        }
+
+        private void button1_Click(object sender, EventArgs e) {
+            try {
+                int limit = Convert.ToInt32(numericUpDownLimit.Text);
+                NumberGenerator ng = new NumberGenerator(limit);
+                GenerateList(ng.GetNumbers());
+            }
+            catch (FormatException ex) {
+                MessageBox.Show("B³edne dane pocz¹tkowe");
+            }
         }
     }
 }
