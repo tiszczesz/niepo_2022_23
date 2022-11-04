@@ -18,6 +18,7 @@ npx tsc -int
 npm i webpack --save-dev
 npm i webpack-cli --save-dev
 npm i ts-loader --save-dev
+npm i --save-dev webpack-dev-server
 ```
 
 # wbpack.config.js
@@ -43,4 +44,10 @@ module.exports = {
   },
 };
 
+```
+# uruchomienie
+
+```console
+npx webpack
+npx webpack serve
 ```
