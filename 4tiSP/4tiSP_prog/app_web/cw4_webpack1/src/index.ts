@@ -1,3 +1,4 @@
+import { Dane } from './dane'
 console.log("Hello from Webpack");
 
 const Users = ["Admin","Prof","Student","Inny","Winny"];
@@ -15,3 +16,6 @@ if(app!==null){
     app.innerHTML = "Teraz coś nowego";
     app.appendChild(ol);
 }
+const newDiv = document.createElement("div");
+newDiv!.innerHTML = Dane.toString()
+app?.appendChild(newDiv)
