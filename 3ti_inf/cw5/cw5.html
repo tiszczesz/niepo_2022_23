@@ -4,14 +4,30 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        img{width: 20%;height: 20%;}
+        #show{cursor: pointer;color: blue;}
+        .show{opacity: 1;
+        transition: opacity 2s;
+    }
+        .hide{
+            transition: opacity 2s;
+            opacity: 0;
+        }
+        .border{
+            border: solid 1px black;
+            background-color: lightcoral;
+        }
+    </style>
     <title>Document</title>
 </head>
 <body>
     <h1>Ćwiczenie 5</h1>
     <div id="show">Kliknij mnie</div>
     <div>
-        <!--Tutaj bedzie obrazek <img  > ktory bedzie sie 
-            pokazywal lub ukrywal po klinieciu wyżej-->
+        <img class="show" src="ch1.jpg" alt="choinka">
     </div>
+    <p id="info">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate, quos laborum? Error mollitia vero tempore aperiam iure saepe nobis iusto provident hic rem, laudantium quam ad perferendis amet recusandae sit?</p>
+    <script src="cw5.js" defer></script>
 </body>
 </html>
