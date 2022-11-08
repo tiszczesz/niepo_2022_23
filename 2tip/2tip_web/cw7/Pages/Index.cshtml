@@ -6,7 +6,7 @@
         <title>Index</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link href="css/index.css" rel="stylesheet">
+        <link href="~/css/index.css" rel="stylesheet">
     </head>
     <body>
        <h1>Index</h1>
@@ -23,5 +23,14 @@
                 }
             </ol>
         </div>
+        <div class="result">
+           suma znaków w liście: @Model.GetAllChar()
+        </div>
+        <div><a href="/Home">Strona Home</a></div>
+        <div><a asp-page="Home">Strona Home inny sposób</a></div>
+        <div>
+            <img src="~/media/szachy.jpg" alt="szachy">
+        </div>
+        <script src="~/js/cw7.js" defer></script>
     </body>
 </html> 

@@ -12,5 +12,12 @@ namespace MyApp.Namespace
             MyNames = new List<string>{"ala","bela","cela","inne","inniejsze"};
             FirstName = "Alojzy Bałecki";
         }
+        public int GetAllChar(){
+            int result = 0;
+            foreach(var elem in MyNames){
+                result += elem.Length;
+            }
+            return result;
+        }
     }
 }
