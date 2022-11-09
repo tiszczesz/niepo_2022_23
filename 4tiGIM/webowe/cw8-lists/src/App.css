@@ -1,0 +1,6 @@
+.icon{
+    float: right;
+    cursor: pointer;
+    height: 20px;
+}
+li:hover{background-color: lightgray;}
