@@ -20,5 +20,7 @@ for(let elem in t1){
 }
 t1.push("ostatni");
 document.querySelector("#c3").innerHTML = t1;
-t1.unshift("pierwszy");
+t1.unshift("pierwszy"); //dodaje na poczatek
+console.log(t1);
+t1.shift(); //zabiera pierwszy element
 console.log(t1);
