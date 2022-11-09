@@ -15,5 +15,5 @@ export const Courses:Array<Course> = [
     new Course(2,"Python wstęp",new Date("2023-06-23"),"Kraków"),
     new Course(3,"React -omówienie",new Date("2024-08-12"),"Warszawa"),
     new Course(4,"C++ i obiekty",new Date("2023-03-28"),"Warszawa"),
-    new Course(4,"C++ i obiekty 2",new Date(),"Warszawa"),
+    new Course(5,"C++ i obiekty 2",new Date(),"Warszawa"),
 ];
