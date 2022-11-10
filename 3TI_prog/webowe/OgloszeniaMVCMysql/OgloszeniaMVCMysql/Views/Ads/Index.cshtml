@@ -33,7 +33,12 @@
            
         </section>
         <section id="srodkowy">
-            <h3>asdsa dsada</h3>
+            <h3>Lista ogłoszeń</h3>
+            <ul>
+                @foreach (var ogloszenia in Model.OgloszeniaByCat) {
+                    <li>@ogloszenia.kategoria @ogloszenia.tytul @ogloszenia.tresc @ogloszenia.Kategorie.nazwa</li>
+                }
+            </ul>
         </section>
         <section id="prawy">
             <h2>
@@ -45,7 +50,7 @@
                         <li><a asp-action="Index" asp-route-id="@kategory.id">@kategory.nazwa</a></li>
                 }
             </ul>
-            <img src="media/ksiazki.jpg" alt="uwolnij swoją książkę"/>
+            <img src="~/media/ksiazki.jpg" alt="uwolnij swoją książkę"/>
             <table>
                 <tr>
                     <td>Ile?</td>
