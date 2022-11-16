@@ -1,0 +1,13 @@
+.line{
+    margin: 20px;
+}
+label{
+    display: inline-block;
+    width: 150px;
+    text-align: right;
+    padding-right: 5px;
+}
+.error{
+    border: solid 2px red;
+}
+input[type=button]{margin-left: 160px; padding: 6px; width: 150px;}
