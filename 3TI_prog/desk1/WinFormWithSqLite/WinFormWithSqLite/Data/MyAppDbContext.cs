@@ -9,21 +9,19 @@ using WinFormWithSqLite.Models;
 
 namespace WinFormWithSqLite.Data
 {
-    public class AppDBContext : DbContext
+    public class MyAppDbContext : DbContext
     {
-        public AppDBContext(string connString):base() {
-            this.connString = connString;
-        }
 
-        private readonly string connString; 
-           // ConfigurationManager.ConnectionStrings["defaultConn"].ConnectionString;
+      
+        private readonly string connString= 
+            ConfigurationManager.ConnectionStrings["defaultConn"].ConnectionString;
 
         public DbSet<Product> Products { get; set; }
         public DbSet<Category> Categories { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder) {
-            base.OnConfiguring(optionsBuilder);
-            optionsBuilder.UseSqlite(connString);
+            //base.OnConfiguring(optionsBuilder);
+            optionsBuilder.UseSqlite("Data Source = myAppDB.db");
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder) {
