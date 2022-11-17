@@ -11,8 +11,12 @@ namespace WinFormWithSqLite.Data
 {
     public class AppDBContext : DbContext
     {
-        private readonly string connString = 
-            ConfigurationManager.ConnectionStrings["defaultConn"].ConnectionString;
+        public AppDBContext(string connString):base() {
+            this.connString = connString;
+        }
+
+        private readonly string connString; 
+           // ConfigurationManager.ConnectionStrings["defaultConn"].ConnectionString;
 
         public DbSet<Product> Products { get; set; }
         public DbSet<Category> Categories { get; set; }

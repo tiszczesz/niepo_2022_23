@@ -15,9 +15,9 @@ namespace WinFormWithSqLite.Models
 
         public string? Name { get; set; }
 
-        public virtual List<Product> Products { get; set; }
+       // public virtual List<Product> Products { get; set; }
 
-        //public virtual ObservableCollectionListSource<Product> Products { get; set; }
+        public virtual ObservableCollectionListSource<Product> Products { get; set; }
 
     }
 }
