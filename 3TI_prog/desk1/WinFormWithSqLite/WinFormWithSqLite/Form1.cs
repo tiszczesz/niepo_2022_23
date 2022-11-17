@@ -18,10 +18,10 @@ namespace WinFormWithSqLite
         private void Form1_Load(object sender, EventArgs e)
         {
             
-            //_db.Database.EnsureCreated();
-            //List<Product> products = _db.Products.Include(p => p.Category).ToList();
-            //dataGridView1.DataSource = products;
-            //dataGridView1.Columns["Category"].DataPropertyName = "Category";
+            _db.Database.EnsureCreated();
+            List<Product> products = _db.Products.Include(p => p.Category).ToList();
+            dataGridView1.DataSource = products;
+            dataGridView1.Columns["Category"].DataPropertyName = "Category";
             //_db = new MyAppDbContext(connString);
             //_db.Database.EnsureCreated();
             //_db.Categories.Load();
