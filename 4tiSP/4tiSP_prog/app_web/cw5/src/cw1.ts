@@ -14,9 +14,12 @@ const zad3 = () => {
     Delay(() => {
         console.log("Zadanie 1");
         Delay(() => {
-            console.log("Zadanie inne"); 
-            console.log("Koniec działania");
-        }, 300);
+            console.log("Zadanie 2");             
+            Delay(()=>{
+                console.log("Zadanie inne");
+                console.log("Koniec działania");
+            },300)
+        }, 2000);
     }, 1000)       
 }
 zad3();
