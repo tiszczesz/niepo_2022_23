@@ -1,4 +1,4 @@
-function Delay2(collback: (txt:string) => string, time: number): void {
+function Delay2(collback: (txt:string) =>void,txt:string, time: number): void {
     setTimeout((txt:string) => {
         collback(txt);
     }, time)
@@ -8,20 +8,24 @@ const zad1 = (txt:string) =>{
     return txt;
     
 }
-const resolve = (txt:string)=>{
-    Delay2((txt)=>{return zad1(txt)},66);
+const resolve = (txt:string,time:number)=>{   
+    console.log(txt);
+     
+    Delay2((txt)=>{zad1(txt);},txt,time);
 }
 const reject = ()=>{
     console.log("ERROR");
 }
 let value: unknown;
-const zad = new Promise((res,reject)=>{
+const myPromise = new Promise((res,reject)=>{
     res(value);
-
-    reject();
+  
+    
+   // reject();
 });
 
-zad.then((zad1)=>{
-    console.log(zad1);
-    
+myPromise.then((value)=>{
+    Delay2((value)=>{},"asasas",4000)
+}).then(()=>{
+    resolve("zadanie 3",400);
 });

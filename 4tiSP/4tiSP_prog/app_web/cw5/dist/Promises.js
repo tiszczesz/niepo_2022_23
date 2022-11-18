@@ -1,5 +1,5 @@
 "use strict";
-function Delay2(collback, time) {
+function Delay2(collback, txt, time) {
     setTimeout((txt) => {
         collback(txt);
     }, time);
@@ -8,17 +8,20 @@ const zad1 = (txt) => {
     console.log(txt);
     return txt;
 };
-const resolve = (txt) => {
-    Delay2((txt) => { return zad1(txt); }, 66);
+const resolve = (txt, time) => {
+    console.log(txt);
+    Delay2((txt) => { zad1(txt); }, txt, time);
 };
 const reject = () => {
     console.log("ERROR");
 };
 let value;
-const zad = new Promise((res, reject) => {
+const myPromise = new Promise((res, reject) => {
     res(value);
-    reject();
+    // reject();
 });
-zad.then((zad1) => {
-    console.log(zad1);
+myPromise.then((value) => {
+    Delay2((value) => { }, "asasas", 4000);
+}).then(() => {
+    resolve("zadanie 3", 400);
 });
