@@ -14,15 +14,18 @@ function generTab(tab){
     //return "GGG";
     let html = "<table>";
     html += "<tr><th>Lp</th><th>Imię</th><th>Nazwisko</th><th>Email</th><th>Telefon</th></tr>";
-    for(let i=0; i<tab.length;i++){
-        html += `<tr>
-                      <td>${i+1}</td>
-                      <td>${tab[i][0]}</td>
-                      <td>${tab[i][1]}</td>
-                      <td>${tab[i][2]}</td>
-                      <td>${tab[i][3]}</td>
-                    </tr> `;
-    }
+    // for(let i=0; i<tab.length;i++){
+    //     html += `<tr>
+    //                   <td>${i+1}</td>
+    //                   <td>${tab[i][0]}</td>
+    //                   <td>${tab[i][1]}</td>
+    //                   <td>${tab[i][2]}</td>
+    //                   <td>${tab[i][3]}</td>
+    //                 </tr> `;
+    // }
+    let lp=0;
+    tab.forEach(function(e,i){
 
+    });
     return html +"</table>";
 }
