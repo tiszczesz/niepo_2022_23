@@ -15,7 +15,8 @@ namespace Kontakty_V1
         }
 
         private void btnAddNew_Click(object sender, EventArgs e) {
-            var addNew = new AddNewForm();
+            
+            var addNew = new AddNewForm(_contacts);
             addNew.ShowDialog();
         }
     }
