@@ -3,3 +3,26 @@
 @{
 }
 <h1>Informacje o Kontaktach</h1>
+
+<div>
+    <table class="table table-bordered">
+        <tr>
+            <th>Lp</th>
+            <th>Nazwa</th>
+            <th>Telefon</th>
+            <th>Email</th>
+        </tr>
+        @{
+            int lp = 0;
+        }
+        @foreach (var c in Model.Contacts) {
+            lp++;
+            <tr>
+                <td>@lp</td>
+                <td>@c.Name</td>
+                <td>@c.Phone</td>
+                <td>@c.Email</td>
+            </tr>
+        }
+    </table>
+</div>
