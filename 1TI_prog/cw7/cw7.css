@@ -19,3 +19,6 @@ td{
 tr:hover{
     background-color: lightblue;
 }
+td{
+    cursor: pointer;
+}

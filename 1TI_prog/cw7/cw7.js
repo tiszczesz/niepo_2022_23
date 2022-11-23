@@ -22,10 +22,29 @@ function generTab(tab){
     //                   <td>${tab[i][2]}</td>
     //                   <td>${tab[i][3]}</td>
     //                 </tr> `;
-    // }
+    // }    if(++i>10)   if(i++>10)
     let lp=0;
     tab.forEach(function(e,i){
-
+        html += `<tr>
+                      <td>${++lp}</td>
+                      <td>${e[0]}</td>
+                      <td>${e[1]}</td>
+                      <td>${e[2]}</td>
+                      <td>${e[3]}</td>
+                    </tr> `;       
     });
     return html +"</table>";
+
 }
+
+const tds =document.querySelectorAll("td");
+tds.forEach(function(e,i){
+    e.addEventListener("click",function(event){
+        console.log(event.target.innerHTML);
+        if(event.target.style.color!="red"){
+            event.target.style.color = "red";
+        }else{
+            event.target.style.color = "blue";
+        }        
+    });
+});
