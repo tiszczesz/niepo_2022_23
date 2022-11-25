@@ -6,8 +6,17 @@ document.querySelector("#run").addEventListener("click",function(){
         let cols = parseInt(document.querySelector("#width").value);
         let rows = parseInt(document.querySelector("#height").value);
         document.querySelector(".scene").innerHTML = generTab(cols,rows);
+         const tds = document.querySelectorAll("td");
+         tds.forEach(function(elem,i){
+            elem.addEventListener("contextmenu",function(event){
+                event.preventDefault();
+                return false;
+            });
+         });
     }
+   
 });
+
 
 function ValidateNumber(element){
     const next = element.nextElementSibling;
