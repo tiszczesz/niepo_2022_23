@@ -1,8 +1,8 @@
 const deley3 = (t:number,v:string)=>{
-    return new Promise<void> ((res)=>{
+    return new Promise<void> ((resolve)=>{
         setTimeout(()=>{
             console.log(v);
-            res()
+            resolve()
         },t)
     });
 }
