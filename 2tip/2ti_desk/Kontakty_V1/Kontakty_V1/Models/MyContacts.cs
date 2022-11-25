@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.Json;
 using System.Threading.Tasks;
 
 namespace Kontakty_V1.Models
@@ -26,6 +27,14 @@ namespace Kontakty_V1.Models
             }
 
             return list;
+        }
+
+        public void SaveToFile(string fileName) {
+            List<string> toJsonArray = new List<string>();
+            foreach (var contact in Contacts) {
+                toJsonArray.Add(JsonSerializer.Serialize(contact));
+            }
+            File.WriteAllLines(fileName,toJsonArray);
         }
     }
 }

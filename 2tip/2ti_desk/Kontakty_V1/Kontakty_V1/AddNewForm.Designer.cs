@@ -113,6 +113,7 @@
             this.btnAddContact.TabIndex = 8;
             this.btnAddContact.Text = "Dodaj kontakt";
             this.btnAddContact.UseVisualStyleBackColor = true;
+            this.btnAddContact.Click += new System.EventHandler(this.btnAddContact_Click);
             // 
             // btnCancel
             // 
@@ -122,6 +123,7 @@
             this.btnCancel.TabIndex = 9;
             this.btnCancel.Text = "Anuluj";
             this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // AddNewForm
             // 

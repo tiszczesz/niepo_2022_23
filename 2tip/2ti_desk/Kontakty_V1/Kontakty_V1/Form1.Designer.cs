@@ -32,6 +32,7 @@
             this.btnLoadContacts = new System.Windows.Forms.Button();
             this.btnAddNew = new System.Windows.Forms.Button();
             this.listBoxContacts = new System.Windows.Forms.ListBox();
+            this.btnSave = new System.Windows.Forms.Button();
             this.flowLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -40,6 +41,7 @@
             this.flowLayoutPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.flowLayoutPanel1.Controls.Add(this.btnLoadContacts);
             this.flowLayoutPanel1.Controls.Add(this.btnAddNew);
+            this.flowLayoutPanel1.Controls.Add(this.btnSave);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
@@ -68,14 +70,24 @@
             // 
             // listBoxContacts
             // 
-            this.listBoxContacts.Dock = System.Windows.Forms.DockStyle.Right;
+            this.listBoxContacts.Dock = System.Windows.Forms.DockStyle.Fill;
             this.listBoxContacts.FormattingEnabled = true;
             this.listBoxContacts.ItemHeight = 15;
-            this.listBoxContacts.Location = new System.Drawing.Point(501, 0);
+            this.listBoxContacts.Location = new System.Drawing.Point(200, 0);
             this.listBoxContacts.Name = "listBoxContacts";
             this.listBoxContacts.ScrollAlwaysVisible = true;
-            this.listBoxContacts.Size = new System.Drawing.Size(299, 450);
+            this.listBoxContacts.Size = new System.Drawing.Size(600, 450);
             this.listBoxContacts.TabIndex = 1;
+            // 
+            // btnSave
+            // 
+            this.btnSave.Location = new System.Drawing.Point(3, 134);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(187, 60);
+            this.btnSave.TabIndex = 2;
+            this.btnSave.Text = "Zapisz do pliku";
+            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // Form1
             // 
@@ -97,5 +109,6 @@
         private Button btnLoadContacts;
         private Button btnAddNew;
         private ListBox listBoxContacts;
+        private Button btnSave;
     }
 }
