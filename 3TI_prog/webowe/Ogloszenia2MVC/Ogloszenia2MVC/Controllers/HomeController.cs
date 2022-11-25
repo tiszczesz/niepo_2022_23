@@ -15,16 +15,29 @@ namespace Ogloszenia2MVC.Controllers
             _logger = logger;
         }
 
-        public IActionResult Index()
-        {
-            return View();
+        public IActionResult Index() {
+            List<User> users = _db.AllUzytkownicy.ToList();
+            return View(users);
         }
 
-        public IActionResult Privacy()
-        {
-            return View();
+        [HttpGet]
+        public IActionResult AddNew() {
+            var user = new User();
+            user.Ogloszenias = null;
+            return View(user);
         }
 
+        [HttpPost]
+        public IActionResult AddNew(User user) {
+            if (!ModelState.IsValid) {
+                
+                return View();
+            }
+            var result = user;
+            _db.AllUzytkownicy.Add(user);
+            _db.SaveChanges();
+            return RedirectToAction("Index");
+        }
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {

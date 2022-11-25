@@ -1,4 +1,4 @@
-﻿@model List<User>
+﻿@model User;
 @{
     ViewData["Title"] = "Dodaj użytkownika";
     Layout = null;
@@ -10,48 +10,48 @@
     <meta name="viewport" content="width=device-width" />
     <meta charset="utf-8" />
     <title>Ogłoszenia drobne</title>
-    <link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="~/css/site.css" />
 </head>
 <body>
-    <header class="baner">
-        <h2>
-            Ogłoszenia drobne
-        </h2>
-    </header>
+<header class="baner">
+    <h2>
+        Ogłoszenia drobne
+    </h2>
+</header>
 <main class="container">
     <section banner>
-        <h2>Przegląd użytkowników</h2>
+        <h2>Rejestracja użytkownika</h2>
     </section>
     <div class="glowny">
-        
         <section id="lewy">
-            <table class="table table-bordered">
-                <tr>
-                    <th>Lp</th><th>Imię</th><th>Nazwisko</th><th>Telefon</th><th>Email</th>
-                </tr>
-                @{ int i = 0;}
-                @foreach (var u in Model) {
-                    i++;
-                    <tr>
-                        <td >@i</td>
-                        <td>@u.imie</td>
-                        <td>@u.nazwisko</td>
-                        <td>@u.telefon</td>
-                        <td>@u.email</td>
-                    </tr>
-                }
-            </table>
-                <a class="btn btn-dark" asp-action="AddNew">Nowy użytkownik</a>
-        </section>
+            <h3>
+                Wpisz swoje dane
+            </h3>
+            <form method="post" asp-action="AddNew">
+                <label asp-for="imie"></label><br/>
+                <input asp-for="imie"/><br/>
+                <label asp-for="nazwisko"></label><br/>
+                <input asp-for="nazwisko"/><br/>
+                <label asp-for="telefon"></label><br/>
+                <input asp-for="telefon"/><br/>
+                <label asp-for="email"></label><br/>
+                <input asp-for="email"/><br/>
+                    <div>
+                        <input type="reset" value="CZYŚĆ" />
+                    <input type="submit" value="WYŚLIJ"/>
+                    
+                </div>
+            </form>
 
+        </section>
+       
         <section id="prawy">
             <h2>
                 Nasze kategorie
             </h2>
-            
+          
             <img src="~/media/ksiazki.jpg" alt="uwolnij swoją książkę"/>
-            <table class="myTab">
+            <table>
                 <tr>
                     <td>Ile?</td>
                     <td>Koszt</td>
@@ -74,5 +74,6 @@
 </main>
 </body>
 </html>
+
 
 
