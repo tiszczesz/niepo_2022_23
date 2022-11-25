@@ -3,7 +3,7 @@ const deley2 = (t, v) => {
     return new Promise((res) => {
         setTimeout(() => {
             console.log(v);
-            // res()
+            res();
         }, t);
     });
 };
