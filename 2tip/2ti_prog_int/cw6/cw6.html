@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="cw6.css">
+    <title>Ćwiczenie 6</title>
+  </head>
+  <body>
+    <h1>Szyfr Cezara</h1>
+    <div class="container">
+      <div>
+        <div>
+          <label for="key">Podaj klucz: </label>
+          <input type="number" min="0" max="26" value="2" id="key" />
+        </div>
+        <textarea
+          name="encode"
+          id="encode"
+          cols="30"
+          rows="10"
+          placeholder="tutaj wpisz tekst do zakodowania"
+        ></textarea>
+        <div>
+          <input type="button" value="Koduj" id="koduj" />
+          
+        </div>
+      </div>
+    </div>
+
+    <div id="result"></div>
+    <script src="cw6.js" defer></script>
+  </body>
+</html>
