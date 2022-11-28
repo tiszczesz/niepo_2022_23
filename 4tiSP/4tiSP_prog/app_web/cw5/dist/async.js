@@ -1,14 +1,14 @@
 "use strict";
 const deley3 = (t, v) => {
-    return new Promise((res) => {
+    return new Promise((resolve) => {
         setTimeout(() => {
             console.log(v);
-            res();
+            resolve();
         }, t);
     });
 };
 (async function () {
-    await deley3(3000, "zadanie 1");
-    await deley3(2000, "zadanie 2");
-    await deley3(1000, "zadanie 3");
+    deley3(3000, "zadanie 1");
+    deley3(2000, "zadanie 2");
+    deley3(500, "zadanie 3");
 })();

@@ -9,5 +9,5 @@ const deley3 = (t:number,v:string)=>{
 (async function(){
     await deley3(3000,"zadanie 1");
     await deley3(2000,"zadanie 2");
-    await deley3(1000,"zadanie 3");
+    await deley3(500,"zadanie 3");
 })()
