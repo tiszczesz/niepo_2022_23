@@ -13,7 +13,7 @@ namespace cw8_WebRazor.Pages
             RepoContacts = new RepoContacts();
         }
         public void OnGet() {
-            Contacts = RepoContacts.GetContacts();
+            Contacts = RepoContacts.Contacts;
         }
     }
 }

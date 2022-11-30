@@ -6,7 +6,7 @@
         private readonly string _filePath = "contacts.txt";
         public RepoContacts() {
             if (File.Exists(_filePath)) {
-               // Contacts = LoadFromFile(_filePath);
+                Contacts = LoadFromFile(_filePath);
             }
             else {
                 Contacts = GetContacts();
@@ -30,6 +30,33 @@
                 toLines.Add(contact.SerializeContact());
             }
             File.WriteAllLines(_filePath,toLines);
+        }
+
+        public List<Contact> LoadFromFile(string fileName) {
+            List<Contact> contacts = new List<Contact>();
+            string[] lines =  File.ReadAllLines(fileName);
+            foreach (string line in lines) {
+                var result = DeserializeContact(line);
+                if (result != null) {
+                    contacts.Add(result);
+                }
+            }
+            return contacts;
+        }
+
+        public Contact? DeserializeContact(string line) {
+            string[] data = line.Split('|');
+            if (data.Length == 4) {
+                Contact contact = new Contact {
+                    Id = Convert.ToInt32(data[0]),
+                    Name = data[1],
+                    Phone = data[2],
+                    Email = data[3]
+                };
+                return contact;
+            }
+
+            return null;
         }
     }
 }
