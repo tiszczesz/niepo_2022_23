@@ -9,7 +9,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 
 string connString = builder.Configuration.GetConnectionString("MySqlConn");
-builder.Services.AddDbContext<_3ti_prog_ark3odlotyContext>(options =>
+builder.Services.AddDbContext<Ark3odlotyContextDb>(options =>
 {
     options.UseMySql(connString, ServerVersion.AutoDetect(connString));
 });

@@ -6,13 +6,13 @@ using WebMVC_Samoloty.Models;
 
 namespace WebMVC_Samoloty.Data
 {
-    public partial class _3ti_prog_ark3odlotyContext : DbContext
+    public partial class Ark3odlotyContextDb : DbContext
     {
-        public _3ti_prog_ark3odlotyContext()
+        public Ark3odlotyContextDb()
         {
         }
 
-        public _3ti_prog_ark3odlotyContext(DbContextOptions<_3ti_prog_ark3odlotyContext> options)
+        public Ark3odlotyContextDb(DbContextOptions<Ark3odlotyContextDb> options)
             : base(options)
         {
         }
