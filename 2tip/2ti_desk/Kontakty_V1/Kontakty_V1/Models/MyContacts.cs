@@ -10,14 +10,32 @@ namespace Kontakty_V1.Models
     public class MyContacts
     {
         public List<Contact> Contacts { get; set; } 
-        public MyContacts() {
-            Contacts = new List<Contact> {
-                new Contact { Id = 1, Firstname = "Jan", Lastname = "Nowak", Email = "nn@onort.pl" },
-                new Contact { Id = 2, Firstname = "Adam", Lastname = "Głowa", Email = "sdfds@onort.pl" },
-                new Contact { Id = 3, Firstname = "Tomasz", Lastname = "Nowak", Email = "erere@onet.pl" },
-                new Contact { Id = 4, Firstname = "Grażyna", Lastname = "Romańska", Email = "fff22@gmail.coml" },
-                new Contact { Id = 5, Firstname = "Monoka", Lastname = "Hajduk", Email = "rr344@interia.pl" },
-            };
+        public MyContacts(string fileName) {
+            if (File.Exists(fileName)) {
+                Contacts = LoadFromFile(fileName);
+            }
+            else {
+                Contacts = new List<Contact> {
+                    new Contact { Id = 1, Firstname = "Jan", Lastname = "Nowak", Email = "nn@onort.pl" },
+                    new Contact { Id = 2, Firstname = "Adam", Lastname = "Głowa", Email = "sdfds@onort.pl" },
+                    new Contact { Id = 3, Firstname = "Tomasz", Lastname = "Nowak", Email = "erere@onet.pl" },
+                    new Contact { Id = 4, Firstname = "Grażyna", Lastname = "Romańska", Email = "fff22@gmail.coml" },
+                    new Contact { Id = 5, Firstname = "Monika", Lastname = "Hajduk", Email = "rr344@interia.pl" },
+                };
+            }
+        }
+
+        private List<Contact> LoadFromFile(string fileName) {
+            List<Contact> list = new List<Contact>();
+            var data = File.ReadAllLines(fileName);
+            foreach (var line in data) {
+                Contact? c = JsonSerializer.Deserialize<Contact>(line);
+                if (c != null) {
+                    list.Add(c);
+                }
+                
+            }
+            return list;
         }
 
         public List<string> ToViewString() {

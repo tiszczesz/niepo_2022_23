@@ -3,14 +3,14 @@ using System.Configuration;
 
 namespace Kontakty_V1
 {
-    public partial class Form1 : Form
-    {
-        private MyContacts _contacts = new MyContacts();
+    public partial class Form1 : Form {
+        private MyContacts _contacts;
         public string? fileName;
         public Form1()
         {
             InitializeComponent();
             fileName = ConfigurationManager.AppSettings.Get("fileName");
+            _contacts  = new MyContacts(fileName);
         }
 
         private void btnLoadContacts_Click(object sender, EventArgs e) {
