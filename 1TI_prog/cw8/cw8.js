@@ -35,14 +35,10 @@ document.querySelector("#run").addEventListener("click", function () {
                         e.target.src="media/p.png";
                         break;
                     default: console.log("inny");
-                }
-              
-               
-                
+                }    
             });
         });
     }
-
 });
 
 
