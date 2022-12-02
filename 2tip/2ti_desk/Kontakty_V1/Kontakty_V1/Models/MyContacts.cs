@@ -41,7 +41,7 @@ namespace Kontakty_V1.Models
         public List<string> ToViewString() {
             List<string> list = new List<string>();
             foreach (var contact in Contacts) {
-                list.Add(contact.Firstname+"\t "+contact.Lastname+"\t email: "+contact.Email);
+                list.Add(contact.Firstname+", "+contact.Lastname+", email: "+contact.Email);
             }
 
             return list;

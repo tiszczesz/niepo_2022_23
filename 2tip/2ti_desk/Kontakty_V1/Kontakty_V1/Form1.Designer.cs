@@ -31,8 +31,9 @@
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.btnLoadContacts = new System.Windows.Forms.Button();
             this.btnAddNew = new System.Windows.Forms.Button();
-            this.listBoxContacts = new System.Windows.Forms.ListBox();
             this.btnSave = new System.Windows.Forms.Button();
+            this.listBoxContacts = new System.Windows.Forms.ListBox();
+            this.btnDelete = new System.Windows.Forms.Button();
             this.flowLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -42,6 +43,7 @@
             this.flowLayoutPanel1.Controls.Add(this.btnLoadContacts);
             this.flowLayoutPanel1.Controls.Add(this.btnAddNew);
             this.flowLayoutPanel1.Controls.Add(this.btnSave);
+            this.flowLayoutPanel1.Controls.Add(this.btnDelete);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
@@ -68,6 +70,16 @@
             this.btnAddNew.UseVisualStyleBackColor = true;
             this.btnAddNew.Click += new System.EventHandler(this.btnAddNew_Click);
             // 
+            // btnSave
+            // 
+            this.btnSave.Location = new System.Drawing.Point(3, 134);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(187, 60);
+            this.btnSave.TabIndex = 2;
+            this.btnSave.Text = "Zapisz do pliku";
+            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            // 
             // listBoxContacts
             // 
             this.listBoxContacts.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -79,15 +91,15 @@
             this.listBoxContacts.Size = new System.Drawing.Size(600, 450);
             this.listBoxContacts.TabIndex = 1;
             // 
-            // btnSave
+            // btnDelete
             // 
-            this.btnSave.Location = new System.Drawing.Point(3, 134);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(187, 60);
-            this.btnSave.TabIndex = 2;
-            this.btnSave.Text = "Zapisz do pliku";
-            this.btnSave.UseVisualStyleBackColor = true;
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            this.btnDelete.Enabled = false;
+            this.btnDelete.Location = new System.Drawing.Point(3, 200);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(187, 60);
+            this.btnDelete.TabIndex = 3;
+            this.btnDelete.Text = "Usuń kontat z listy";
+            this.btnDelete.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
@@ -110,5 +122,6 @@
         private Button btnAddNew;
         private ListBox listBoxContacts;
         private Button btnSave;
+        private Button btnDelete;
     }
 }
