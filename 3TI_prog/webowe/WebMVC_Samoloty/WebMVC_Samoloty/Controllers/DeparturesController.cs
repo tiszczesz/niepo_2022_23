@@ -11,8 +11,25 @@ namespace WebMVC_Samoloty.Controllers
             _db = db;
         }
         public IActionResult Index() {
-            var odloty = _db.Odloties.Include(o=>o.Samoloty).OrderByDescending(o=>o.Czas).ToList();
+            Response.Cookies.Append("odwiedzone","true",
+                new Microsoft.AspNetCore.Http.CookieOptions() {
+                    Path = "/",
+                    Expires = DateTimeOffset.Now.AddHours(1)
+                });
+            var cookies = Response.Cookies;
+            if (cookies != null && Request.Cookies["odwiedzone"] != null) {
+                ViewBag.cookie = Request.Cookies["odwiedzone"].ToString();
+            } 
+            var odloty = _db.Odloties.Include(o=>o.Samoloty)
+                .OrderByDescending(o=>o.Czas).ToList();
             return View(odloty);
+        }
+
+        public IActionResult Details(uint id) {
+            var info = _db.Samoloties.Find(id);
+            if (info == null) return RedirectToAction("Index");
+
+            return View(info);
         }
     }
 }

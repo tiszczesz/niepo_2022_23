@@ -8,6 +8,10 @@ document.querySelector("#run").addEventListener("click", function () {
         document.querySelector(".scene").innerHTML = generTab(cols, rows);
         const tds = document.querySelectorAll("td>img");
        // console.log(tds);
+       document.querySelector("table").addEventListener("contextmenu",function(e){
+            e.preventDefault();
+            return false;
+       });
         tds.forEach(function (elem, i) {
             console.log(elem,i);
             elem.addEventListener("contextmenu", function (event) {
@@ -60,7 +64,7 @@ function generTab(cols, rows) {
     for (let i = 0; i < rows; i++) {
         html += "<tr>";
         for (let j = 0; j < cols; j++) {
-            html += "<td><img src='media/p.png' ></td>";
+            html += "<td><img src='media/p.png'></td>";
         }
         html += "</tr>";
     }

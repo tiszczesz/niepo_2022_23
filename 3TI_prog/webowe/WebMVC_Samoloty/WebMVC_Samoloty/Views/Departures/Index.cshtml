@@ -17,7 +17,7 @@
 <div class="baner1">
     <h2>Odloty z lotniska</h2>
 </div>
-<div class="baner2"><img src="logo.png" alt="logotyp"></div>
+<div class="baner2"><img src="~/media/zad6_1.png" alt="logotyp"></div>
 <div class="main">
     <h4>Tabela odlotów</h4>
     <table>
@@ -33,7 +33,7 @@
            <tr>
                <td>@o.Id</td>
                <td>@o.NrRejsu</td>
-               <td>@o.Samoloty.Linie</td>
+                    <td><a asp-route-id="@o.SamolotyId" asp-action="Details">@o.Samoloty.Linie</a></td>
                <td>@o.Czas</td>
                <td>@o.Kierunek</td>
                <td>@o.StatusLotu</td>
@@ -47,7 +47,12 @@
         <a href="#">Pobierz obraz</a>
     </div>
     <div id="cookie">
-       
+       @if (ViewBag.cookie != null) {
+           <h3>Witamy ponownie</h3>
+       }
+       else {
+           <h3>Witamy pierwszy raz mordki</h3>
+       }
     </div >
     <div id="autor">Autor: XXXXXXXX</div>
 </footer>

@@ -1,0 +1,45 @@
+﻿@model WebMVC_Samoloty.Models.Samoloty
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="~/css/style6.css"/>
+    <title>Odloty samolotów</title>
+        
+
+    <link rel="stylesheet" href="style6.css">
+</head>
+
+<body>
+<div class="baner1">
+    <h2>Odloty z lotniska</h2>
+</div>
+<div class="baner2"><img src="~/media/zad6_1.png" alt="logotyp"></div>
+<div class="main">
+    <h4>Szczegłóły linii lotniczych</h4>
+    <h5>Linia lotnicza: @Model.Linie</h5>
+    <h5>Typ: @Model.Typ</h5>
+    
+    <h6><a asp-action="Index">Powrót do informacji ogólnych o odlotach</a></h6>
+</div>
+
+<footer>
+    <div class="pobierz">
+        <a href="#">Pobierz obraz</a>
+    </div>
+    <div id="cookie">
+        @if (ViewBag.cookie != null) {
+            <h3>Witamy ponownie</h3>
+        }
+        else {
+            <h3>Witamy pierwszy raz mordki</h3>
+        }
+    </div >
+    <div id="autor">Autor: XXXXXXXX</div>
+</footer>
+</body>
+
+</html>
