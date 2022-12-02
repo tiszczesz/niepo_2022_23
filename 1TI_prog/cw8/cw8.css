@@ -22,7 +22,9 @@ button{
     background-color: lightpink;
 }
 table{border-collapse: collapse;border: solid grey 1px;}
-td{width: 20px;height: 20px;border: solid grey 1px; cursor: pointer;}
+td{width: 20px;height: 20px;border: solid grey 1px; padding: 0;
+box-sizing: border-box;}
+td>img{cursor: pointer;}
 .error{color: red; font-weight: bold;}
 img{
     width: 100%;
