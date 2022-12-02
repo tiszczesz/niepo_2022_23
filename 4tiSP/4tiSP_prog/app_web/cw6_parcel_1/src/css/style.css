@@ -1,0 +1,11 @@
+.kosz{    
+    cursor: pointer;
+}
+li:hover{
+    background-color: lightgrey;
+}
+li{
+    /* display: flex; */
+    justify-content: space-between;
+    align-items: center;
+}

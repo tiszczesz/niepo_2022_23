@@ -1,0 +1,1 @@
+{"mappings":"AAAA;;;;AAGA;;;;AAGA","sources":["src/css/style.css"],"sourcesContent":[".kosz{    \r\n    cursor: pointer;\r\n}\r\nli:hover{\r\n    background-color: lightgrey;\r\n}\r\nli{\r\n    /* display: flex; */\r\n    justify-content: space-between;\r\n    align-items: center;\r\n}"],"names":[],"version":3,"file":"index.c92073ef.css.map","sourceRoot":"/__parcel_source_root/"}

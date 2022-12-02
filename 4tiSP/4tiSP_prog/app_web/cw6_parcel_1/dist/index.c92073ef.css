@@ -1,0 +1,14 @@
+.kosz {
+  cursor: pointer;
+}
+
+li:hover {
+  background-color: #d3d3d3;
+}
+
+li {
+  justify-content: space-between;
+  align-items: center;
+}
+
+/*# sourceMappingURL=index.c92073ef.css.map */
