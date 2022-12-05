@@ -7,6 +7,10 @@ android {
     namespace 'com.niepolomice.zapisnakurs'
     compileSdk 32
 
+    buildFeatures{
+        viewBinding true
+    }
+
     defaultConfig {
         applicationId "com.niepolomice.zapisnakurs"
         minSdk 29
