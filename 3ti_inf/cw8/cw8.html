@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ćwiczenie 8 - rekurencji i iteracja</title>
+</head>
+<body>
+    <h1>Ćwiczenie 8 - rekurencji i iteracja</h1>
+    <h3>Powtórzenia iteracyjnie</h3>
+    <script>
+        let i= 0
+        while(i<6){
+            i++;
+            document.write(`<p>Wyświetlenie iteracyjne i = ${i}</p>`);
+        }
+    </script>
+    <h3>Powtórzenie rekurencyjne</h3>
+    <script>
+        function Powtorz(ile){
+            document.write(`<p>Wyświetlenie rekurencyjne ile = ${ile}</p>`);
+            if(ile>0) Powtorz(ile-1);
+            document.write(`<p>Wyświetlenie rekurencyjne ile = ${ile}</p>`);
+        }
+        Powtorz(6);
+    </script>
+</body>
+</html>
