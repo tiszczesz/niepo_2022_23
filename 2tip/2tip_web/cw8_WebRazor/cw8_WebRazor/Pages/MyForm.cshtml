@@ -1,0 +1,22 @@
+﻿@page
+@model cw8_WebRazor.Pages.MyFormModel
+@{
+}
+<h1>Formularz</h1>
+<form method="post">
+    <div class="row m-2">
+        <label for="firstname" class="col-3 text-end" >Imię: </label>
+        <input name="firstname" id="firstname" type="text" class="col-9" />
+    </div>
+    <div class="row m-2">
+        <label for="lastname" class="col-3 text-end">Nazwisko: </label>
+        <input name="lastname" id="lastname" type="text" class="col-9" />
+    </div>
+    <div class="row m-2">
+        <label for="dateBirth" class="col-3 text-end">Data urodzenia: </label>
+        <input name="dateBirth" id="dateBirth" type="date" class="col-9" />
+    </div>
+    <div class="row">
+        <input type="submit" value="Zapisz" class="btn btn-primary offset-3 col-9"/>
+    </div>
+</form>
