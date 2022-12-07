@@ -10,7 +10,7 @@
             }
             else {
                 Contacts = GetContacts();
-                SaveToFile(_filePath);
+                SaveToFile();
             }
             
         }
@@ -24,7 +24,7 @@
             };
         }
 
-        public void SaveToFile(string filePath) {
+        public void SaveToFile() {
             List<string> toLines = new List<string>();
             foreach (var contact in Contacts) {
                 toLines.Add(contact.SerializeContact());
@@ -32,6 +32,9 @@
             File.WriteAllLines(_filePath,toLines);
         }
 
+        public int GetNewId() {
+            return Contacts.Max(c => c.Id) + 1;
+        }
         public List<Contact> LoadFromFile(string fileName) {
             List<Contact> contacts = new List<Contact>();
             string[] lines =  File.ReadAllLines(fileName);
