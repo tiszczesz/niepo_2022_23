@@ -22,10 +22,7 @@ namespace Kontakty_V1
             listBoxContacts.DataSource = null;
             listBoxContacts.DataSource = _contacts.Contacts;
             listBoxContacts.DisplayMember = "ToListBoxLine";
-            //listBoxContacts.BeginUpdate();
-            //listBoxContacts.DataSource = _contacts.Contacts;
-            //listBoxContacts.DisplayMember = "ToListBoxLine";
-            //listBoxContacts.EndUpdate();
+            
         }
 
         private void btnAddNew_Click(object sender, EventArgs e) {

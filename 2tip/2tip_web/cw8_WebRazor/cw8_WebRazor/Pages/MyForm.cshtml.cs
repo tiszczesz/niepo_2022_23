@@ -12,9 +12,12 @@ namespace cw8_WebRazor.Pages
         public void OnPost() {
 
             string firstname = Request.Form["firstname"];
-            string lasatname = Request.Form["lastname"];
+            string lastname = Request.Form["lastname"];
             string dateBirth = Request.Form["dateBirth"];
-            //ViewData
+            ViewData["post"] = true;
+            ViewData["firstname"] = firstname;
+            ViewData["lastname"] = lastname;
+            ViewData["dateBirth"] = dateBirth;
         }
     }
 }
