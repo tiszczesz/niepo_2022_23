@@ -12,8 +12,12 @@ namespace Kontakty_V1.Models
         public string Firstname { get; set; }
         public string Lastname { get; set; }
         public string Email { get; set; }
-        public override string ToString() {
-            return $"{Firstname}|{Lastname}|{Email}";
+        //public override string ToString() {
+        //    return $"{Firstname}|{Lastname}|{Email}";
+        //}
+
+        public string ToListBoxLine {
+            get { return $"{Firstname}, {Lastname}, {Email}"; }
         }
     }
 }

@@ -32,8 +32,8 @@
             this.btnLoadContacts = new System.Windows.Forms.Button();
             this.btnAddNew = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
-            this.listBoxContacts = new System.Windows.Forms.ListBox();
             this.btnDelete = new System.Windows.Forms.Button();
+            this.listBoxContacts = new System.Windows.Forms.ListBox();
             this.flowLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -80,6 +80,17 @@
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
+            // btnDelete
+            // 
+            this.btnDelete.Enabled = false;
+            this.btnDelete.Location = new System.Drawing.Point(3, 200);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(187, 60);
+            this.btnDelete.TabIndex = 3;
+            this.btnDelete.Text = "Usuń kontat z listy";
+            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            // 
             // listBoxContacts
             // 
             this.listBoxContacts.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -90,16 +101,6 @@
             this.listBoxContacts.ScrollAlwaysVisible = true;
             this.listBoxContacts.Size = new System.Drawing.Size(600, 450);
             this.listBoxContacts.TabIndex = 1;
-            // 
-            // btnDelete
-            // 
-            this.btnDelete.Enabled = false;
-            this.btnDelete.Location = new System.Drawing.Point(3, 200);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(187, 60);
-            this.btnDelete.TabIndex = 3;
-            this.btnDelete.Text = "Usuń kontat z listy";
-            this.btnDelete.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
