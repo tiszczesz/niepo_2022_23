@@ -15,7 +15,7 @@ document.querySelector("#oblicz").onclick = function(){
             //silniaRek(n)
         }
     }else{
-        document.querySelector("#result").innerHTML = "Blędne dane";
+        document.querySelector("#result").innerHTML = "Błędne dane";
     }
 }
 
