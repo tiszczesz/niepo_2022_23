@@ -1,32 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Ćwiczenie 9 Silnia</title>
-    <link rel="stylesheet" href="cw9.css">
-</head>
-<body>
+    <link rel="stylesheet" href="cw9.css" />
+  </head>
+  <body>
     <div class="container">
-        <h1>Oblicz silnię</h1>
-        <div class="line">
-            <label for="n">Podaj n = </label>
-            <input type="number" name="n" id="n" min="1" max="20" placeholder="liczba miedzy 1 a 20">
-            <span class="error"></span>
-        </div>
-        <div class="line">
-            <label for="wybor">Wybierz metodę:</label><br>
-            <label for="wybor">Metoda iteracyjna: </label><input type="radio" name="wybor" 
-            id="iter" checked><br>
-            <label for="wybor">Metoda rekurencyjna: </label><input type="radio" name="wybor" 
-            id="rek" checked><br>
-        </div>
-        <div class="line">
-            <input type="button" value="Oblicz" id="oblicz">
-        </div>
-        <div id="result"></div>
+      <h1>Oblicz silnię</h1>
+      <div class="line">
+        <label for="n">Podaj n = </label>
+        <input
+          type="number"
+          name="n"
+          id="n"
+          min="1"
+          max="20"
+          placeholder="liczba miedzy 1 a 20"
+        />
+        <span class="error"></span>
+      </div>
+      <div class="line">
+        <label for="wybor">Wybierz metodę:</label><br />
+        <label for="wybor">Metoda iteracyjna: </label>
+        <input type="radio" name="wybor" id="iter" value="iter" checked /><br />
+        <label for="wybor">Metoda rekurencyjna: </label>
+        <input type="radio" name="wybor" id="rek" value="rek"  /><br />
+      </div>
+      <div class="line">
+        <input type="button" value="Oblicz" id="oblicz" />
+      </div>
+      <div id="result"></div>
     </div>
     <script src="cw9.js" defer></script>
-</body>
+  </body>
 </html>
