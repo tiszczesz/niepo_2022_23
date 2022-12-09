@@ -17,7 +17,7 @@ namespace Kontakty_V1.Models
         //}
 
         public string ToListBoxLine {
-            get { return $"{Firstname}, {Lastname}, {Email}"; }
+            get { return $"{Firstname}, {Lastname}, {Email} tralalala"; }
         }
     }
 }
