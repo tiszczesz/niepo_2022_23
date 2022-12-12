@@ -1,0 +1,27 @@
+h1{text-align: center;border-bottom: solid 2px gray;}
+.container{
+    margin: 20px 30px;
+}
+label{
+    display: inline-block;
+    width: 200px;
+    text-align: right;
+    padding-right: 5px;
+}
+.line{
+    margin: 20px;
+}
+input[type=button]{
+    margin-left: 210px;
+    padding: 6px;
+    width: 150px;
+}
+#result{
+    border: solid 2px darkkhaki;
+    height: 100px;
+    box-shadow: 10px 5px 5px grey ;
+    padding: 20px;
+}
+.error{
+    color: red;
+}
