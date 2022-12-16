@@ -9,6 +9,8 @@ namespace cw8_WebRazor.Pages
     {
         RepoContacts _contacts;
 
+        [BindProperty]
+        public Contact MyContact { get; set; }
         public ContactFormModel() {
             _contacts = new RepoContacts();
         }
@@ -16,9 +18,18 @@ namespace cw8_WebRazor.Pages
         {
         }
 
-        public void OnPost() {
-            //_contacts.Contacts.Add(to co z formularza)
-            //_contacts.SaveToFile();
+        public IActionResult OnPost() {
+            if (ModelState.IsValid) {
+                 MyContact.Id = _contacts.GetNewId();
+                 _contacts.Contacts.Add(MyContact);
+                 _contacts.SaveToFile();
+                 return new RedirectToPageResult("MyPage");
+            }
+            else {
+                return Page();
+            }
+           
+            
         }
     }
 }

@@ -2,3 +2,22 @@
 @model cw8_WebRazor.Pages.ContactFormModel
 @{
 }
+
+<form method="post">
+    <div asp-validation-summary="All" class="text-danger"></div>
+    <div class="row m-2">
+        <label asp-for="MyContact.Name" class="col-3 text-end"></label>
+        <input asp-for="MyContact.Name" class="col-9"/>
+    </div>
+    <div class="row m-2">
+        <label asp-for="MyContact.Email" class="col-3 text-end"></label>
+        <input asp-for="MyContact.Email" class="col-9"/>
+    </div>
+    <div class="row m-2">
+        <label asp-for="MyContact.Phone" class="col-3 text-end"></label>
+        <input asp-for="MyContact.Phone" class="col-9"/>
+    </div>
+    <div class="row">
+        <input type="submit" value="Zapisz" class="btn btn-primary offset-3 col-9"/>
+    </div>
+</form>
