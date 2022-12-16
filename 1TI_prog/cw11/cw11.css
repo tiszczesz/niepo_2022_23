@@ -1,0 +1,17 @@
+.error {
+  color: red;
+}
+.line {
+  margin: 20px;
+}
+label {
+  display: inline-block;
+  width: 200px;
+  text-align: right;
+  padding-right: 5px;
+}
+button {
+  width: 200px;
+  padding: 8px;
+  margin-left: 210px;
+}
