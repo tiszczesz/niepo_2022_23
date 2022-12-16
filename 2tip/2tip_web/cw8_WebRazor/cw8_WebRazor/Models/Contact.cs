@@ -17,7 +17,7 @@ namespace cw8_WebRazor.Models
         public string Phone { get; set; }
 
         [DisplayName("Adres email: ")]
-        [Required(ErrorMessage = "Proszę podać telefon")]
+        [Required(ErrorMessage = "Proszę podać email")]
         public string Email { get; set; }
 
         public string SerializeContact() {
