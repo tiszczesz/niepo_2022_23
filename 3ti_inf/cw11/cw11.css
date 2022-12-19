@@ -1,0 +1,46 @@
+.container{
+    margin: 0px 30px;
+}
+h1{
+    text-align: center;
+    border-bottom: solid 2px brown;
+}
+.time{
+    position: absolute;
+    top: 50px;
+    right: 30px;
+    background-color: lightskyblue;
+    color: blue;
+    font-size: 3rem;
+    padding: 20px;
+    border: black 2px solid;
+    box-shadow: 20px 20px 20px grey;
+    font-weight: bold;
+}
+.card{
+    margin: auto;
+    text-align: center;
+    width: 350px;
+    height: 500px;
+    border: solid grey 1px;
+    border-radius: 20px;
+    background-color: lightgray;
+}
+.year{
+    margin-top: 40px;
+    font-size: 2.5rem;
+}
+.mounth{
+    margin-top: 30px;
+    font-size: 3rem;    
+    color: blue;
+}
+.date{
+    font-size: 10rem;
+    font-weight: bold;
+}
+.day{
+    margin-top: 20px;
+    font-size: 2.5rem;
+    color: darkolivegreen;
+}
