@@ -1,0 +1,16 @@
+﻿@page
+@model cw8_WebRazor.Pages.DeleteModel
+@{
+}
+<h3>Usuwanie kontaktu</h3>
+<h4>Czy na pewno chcesz usunąć kontakt?</h4>
+@if (Model.Contact != null) {
+    <div class="text-danger">
+        <p>Id: @Model.Contact.Id</p>
+        <p>Nazwa: @Model.Contact.Name</p>
+        <p>Telefon: @Model.Contact.Phone</p>
+        <p>Email: @Model.Contact.Email</p>
+    </div>
+    
+}
+

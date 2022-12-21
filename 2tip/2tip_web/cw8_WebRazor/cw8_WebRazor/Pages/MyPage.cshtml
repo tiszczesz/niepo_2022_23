@@ -11,6 +11,7 @@
             <th>Nazwa</th>
             <th>Telefon</th>
             <th>Email</th>
+            <th>Operacje na kontaktach</th>
         </tr>
         @{
             int lp = 0;
@@ -22,6 +23,12 @@
                 <td>@c.Name</td>
                 <td>@c.Phone</td>
                 <td>@c.Email</td>
+                <td>
+                    <a class="btn btn-danger" asp-page="Delete" 
+                       asp-route-id="@c.Id">Usuń</a> 
+                    <a class="btn btn-primary" asp-page="Update" 
+                       asp-route-id="@c.Id">Edytuj</a>
+                </td>
             </tr>
         }
     </table>
