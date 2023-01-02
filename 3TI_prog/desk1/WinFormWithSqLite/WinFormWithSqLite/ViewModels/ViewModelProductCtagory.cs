@@ -10,6 +10,7 @@ namespace WinFormWithSqLite.ViewModels
     public class ViewModelProductCtagory
     {
         public string? ProductName { get; set; }
+        public int ProductId { get; set; }
         
         public string? CategoryName { get; set; }
     }

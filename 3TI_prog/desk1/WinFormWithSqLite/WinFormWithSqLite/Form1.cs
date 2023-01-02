@@ -23,9 +23,11 @@ public partial class Form1 : Form {
         dataGridView1.DataSource =
             products
                 .Select(e => new ViewModelProductCtagory {
+                    ProductId = e.ProductId,
                     ProductName = e.Name,
                     CategoryName = e.Category.Name
                 }).ToList();
+        dataGridView1.Columns["ProductId"].Visible = false;
     }
 
     private void FillCategory() {
@@ -54,5 +56,16 @@ public partial class Form1 : Form {
     private void btnAddCategory_Click(object sender, EventArgs e) {
         new AddCategryForm(_db).ShowDialog();
         FillCategory();
+    }
+
+    private void dataGridView1_MouseDoubleClick(object sender, MouseEventArgs e) {
+        int selectedItem = dataGridView1.Rows.GetRowCount(DataGridViewElementStates.Selected);
+        if (selectedItem > 0) {
+            var elem = dataGridView1.Rows[0];
+            int idProduct = Convert.ToInt32(elem.Cells["ProductId"].Value);
+            Product pp = _db.Products.FirstOrDefault(p=>p.ProductId==idProduct);
+            //int productId = elem.Cells.IndexOf();
+            //Product p = elem.DataBoundItem as Product;
+        }
     }
 }
