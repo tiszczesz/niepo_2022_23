@@ -3,10 +3,12 @@ using WinFormWithSqLite.Data;
 using WinFormWithSqLite.Models;
 using WinFormWithSqLite.ViewModels;
 
-namespace WinFormWithSqLite; 
+namespace WinFormWithSqLite;
 
 public partial class Form1 : Form {
     private readonly MyAppDbContext _db = new();
+    private Product _selectedProdukt;
+    private int _selectedRow = -1;
 
     public Form1() {
         InitializeComponent();
@@ -35,22 +37,23 @@ public partial class Form1 : Form {
         cBoxCategories.DataSource = categories;
         cBoxCategories.DisplayMember = "Name";
         cBoxCategories.ValueMember = "CategoryId";
+        cBoxCategoriesEdit.DataSource = categories;
+        cBoxCategoriesEdit.DisplayMember = "Name";
+        cBoxCategoriesEdit.ValueMember = "CategoryId";
     }
 
-    private void btnAdd_Click(object sender, EventArgs e)
-    {
-        if (String.IsNullOrEmpty(tbName.Text)) {
+    private void btnAdd_Click(object sender, EventArgs e) {
+        if (string.IsNullOrEmpty(tbName.Text)) {
             MessageBox.Show("Brak danych");
             return;
         }
 
         var name = tbName.Text.Trim();
-        int id = Convert.ToInt32(cBoxCategories.SelectedValue);
-        Product product = new Product { Name = name, CategoryId = id };
+        var id = Convert.ToInt32(cBoxCategories.SelectedValue);
+        var product = new Product { Name = name, CategoryId = id };
         _db.Products.Add(product);
         _db.SaveChanges();
         FillListProducts();
-
     }
 
     private void btnAddCategory_Click(object sender, EventArgs e) {
@@ -59,13 +62,48 @@ public partial class Form1 : Form {
     }
 
     private void dataGridView1_MouseDoubleClick(object sender, MouseEventArgs e) {
-        int selectedItem = dataGridView1.Rows.GetRowCount(DataGridViewElementStates.Selected);
-        if (selectedItem > 0) {
-            var elem = dataGridView1.Rows[0];
-            int idProduct = Convert.ToInt32(elem.Cells["ProductId"].Value);
-            Product pp = _db.Products.FirstOrDefault(p=>p.ProductId==idProduct);
-            //int productId = elem.Cells.IndexOf();
-            //Product p = elem.DataBoundItem as Product;
+        _selectedRow = dataGridView1.Rows.GetRowCount(DataGridViewElementStates.Selected);
+        if (_selectedRow == 1) {
+            _selectedProdukt = GetProduct();
+            if (_selectedProdukt != null) {
+                var result = MessageBox.Show($" Czy usun¹æ produkt: {_selectedProdukt.Name} {_selectedProdukt.Category.Name}",
+                    "ZatwierdŸ", MessageBoxButtons.OKCancel);
+                if (result == DialogResult.OK) {
+                    _db.Products.Remove(_selectedProdukt);
+                    _db.SaveChanges();
+                    FillListProducts();
+                }
+            }
+        }
+    }
+
+    private Product? GetProduct() {
+        var elem = dataGridView1.SelectedRows[0];
+        var idProduct = Convert.ToInt32(elem.Cells["ProductId"].Value);
+        var pp = _db.Products.FirstOrDefault(p => p.ProductId == idProduct);
+        return pp;
+    }
+
+    private void dataGridView1_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e) {
+        panel2.Visible = true;
+        _selectedRow = dataGridView1.Rows.GetRowCount(DataGridViewElementStates.Selected);
+        if (_selectedRow == 1) {
+            _selectedProdukt = GetProduct();
+            if (_selectedProdukt != null) {
+                cBoxCategoriesEdit.SelectedItem = _selectedProdukt.Category;
+                tbNameEdit.Text = _selectedProdukt.Name;
+            }
+        }
+    }
+
+    private void btnUpdateProduct_Click(object sender, EventArgs e) {
+        if (_selectedRow == 1  && !string.IsNullOrEmpty(tbNameEdit.Text)) {
+            //_selectedProdukt.Name = tbNameEdit.Text;
+            //_selectedProdukt.CategoryId = Convert.ToInt32(cBoxCategoriesEdit.SelectedIndex);
+            //_db.Products.Update(_selectedProdukt);
+            //_db.SaveChanges();
+            //FillListProducts();
+            //todo
         }
     }
 }
