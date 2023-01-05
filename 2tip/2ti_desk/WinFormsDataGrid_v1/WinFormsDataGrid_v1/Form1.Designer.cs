@@ -29,8 +29,9 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.dgvWorkers = new System.Windows.Forms.DataGridView();
+            this.btnEdit = new System.Windows.Forms.Button();
             this.btnLoad = new System.Windows.Forms.Button();
+            this.dgvWorkers = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvWorkers)).BeginInit();
             this.SuspendLayout();
@@ -38,6 +39,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.panel1.Controls.Add(this.btnEdit);
             this.panel1.Controls.Add(this.btnLoad);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
@@ -45,14 +47,15 @@
             this.panel1.Size = new System.Drawing.Size(200, 450);
             this.panel1.TabIndex = 0;
             // 
-            // dgvWorkers
+            // btnEdit
             // 
-            this.dgvWorkers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvWorkers.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvWorkers.Location = new System.Drawing.Point(200, 0);
-            this.dgvWorkers.Name = "dgvWorkers";
-            this.dgvWorkers.Size = new System.Drawing.Size(600, 450);
-            this.dgvWorkers.TabIndex = 1;
+            this.btnEdit.Enabled = false;
+            this.btnEdit.Location = new System.Drawing.Point(3, 55);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(191, 37);
+            this.btnEdit.TabIndex = 1;
+            this.btnEdit.Text = "Edytuj dane";
+            this.btnEdit.UseVisualStyleBackColor = true;
             // 
             // btnLoad
             // 
@@ -63,6 +66,19 @@
             this.btnLoad.Text = "Załaduj dane";
             this.btnLoad.UseVisualStyleBackColor = true;
             this.btnLoad.Click += new System.EventHandler(this.btnLoad_Click);
+            // 
+            // dgvWorkers
+            // 
+            this.dgvWorkers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvWorkers.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvWorkers.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.dgvWorkers.Location = new System.Drawing.Point(200, 0);
+            this.dgvWorkers.MultiSelect = false;
+            this.dgvWorkers.Name = "dgvWorkers";
+            this.dgvWorkers.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvWorkers.Size = new System.Drawing.Size(600, 450);
+            this.dgvWorkers.TabIndex = 1;
+            this.dgvWorkers.SelectionChanged += new System.EventHandler(this.dgvWorkers_SelectionChanged);
             // 
             // Form1
             // 
@@ -85,5 +101,6 @@
         private Panel panel1;
         private DataGridView dgvWorkers;
         private Button btnLoad;
+        private Button btnEdit;
     }
 }

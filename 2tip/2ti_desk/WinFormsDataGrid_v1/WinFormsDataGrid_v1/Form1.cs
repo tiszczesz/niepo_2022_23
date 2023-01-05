@@ -17,5 +17,9 @@ namespace WinFormsDataGrid_v1
         {
             dgvWorkers.DataSource = Repo.Workers;
         }
+
+        private void dgvWorkers_SelectionChanged(object sender, EventArgs e) {
+            btnEdit.Enabled = true;
+        }
     }
 }

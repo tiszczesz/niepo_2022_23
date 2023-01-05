@@ -44,15 +44,22 @@
                   SelectedIndex="0"
                   VerticalAlignment="Center" ItemsSource="{Binding Path=Methods}"
                   >
-          <!--  <ComboBoxItem Content="Metoda Iteracyjna" Tag="iter"></ComboBoxItem>
+            <!--  <ComboBoxItem Content="Metoda Iteracyjna" Tag="iter"></ComboBoxItem>
             <ComboBoxItem Content="Metoda Rekurencyjna" Tag="rek"></ComboBoxItem> -->
-            
+
         </ComboBox>
         <Button x:Name="button" Click="Button_OnClick"
                 Grid.Column="1" Content="Oblicz" Grid.Row="3" Margin="5,5,5,5"/>
         <TextBox x:Name="textBox1" Grid.Column="2" 
                  
-                 HorizontalAlignment="Center" Margin="10,10,10,0" Grid.Row="4" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="263" Height="37"/>
+                 HorizontalAlignment="Center" Margin="10,10,10,0" Grid.Row="4" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="263" Height="37" TextAlignment="Center">
+            <TextBox.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFACB7B9" Offset="1"/>
+                    <GradientStop Color="White" Offset="0.079"/>
+                </LinearGradientBrush>
+            </TextBox.Background>
+        </TextBox>
         <Label x:Name="label_Copy" Content="b= " HorizontalContentAlignment="Right" Margin="45,0,0,0" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Row="1"/>
 
     </Grid>
