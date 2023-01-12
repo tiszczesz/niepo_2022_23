@@ -1,4 +1,5 @@
-﻿@model WebPortal_v1.ViewModels.LoginViewModel
+﻿@using WebPortal_v1.Models
+@model WebPortal_v1.ViewModels.LoginViewModel
 @{
     Layout = null;
 }
@@ -36,7 +37,29 @@
     </div>
     <div class="right">
         <h3>Wizytówka</h3>
-        
+        @if (ViewBag?.model) {
+            <div>@ViewBag.result</div>
+            
+
+            if (ViewBag.isOKPswd && ViewBag.dane!=null) {
+                
+                    string srcPhoto = $"/media/{(ViewBag.dane as Dane).Zdjecie}";
+                    int a = 12;
+                    <img src='@srcPhoto' alt='osoba'>
+               <h4>@Model.Login (@ViewBag.year)</h4>
+                    <p>hobby: @ViewBag?.dane?.Hobby</p>
+                    <h1><img src='~/media/icon-on.png'> (@ViewBag?.dane?.Przyjaciol)</h1>
+            }
+            else {
+                    <div> Hasło jest  błędne </div>
+            }
+
+
+        }
+        else {
+            <div>Brak danych</div>
+        }
+         
             
     </div>
 </div>
