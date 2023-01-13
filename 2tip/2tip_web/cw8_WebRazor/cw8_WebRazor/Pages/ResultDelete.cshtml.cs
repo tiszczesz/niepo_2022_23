@@ -4,9 +4,8 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace cw8_WebRazor.Pages
 {
-    public class ResultDeleteModel : PageModel
-    {
-        public RepoContacts repo { get; set; }
+    public class ResultDeleteModel : PageModel {
+        private RepoContacts repo;
 
         public ResultDeleteModel() {
             repo = new RepoContacts();
