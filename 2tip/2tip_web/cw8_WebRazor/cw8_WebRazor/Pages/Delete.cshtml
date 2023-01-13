@@ -11,6 +11,12 @@
         <p>Telefon: @Model.Contact.Phone</p>
         <p>Email: @Model.Contact.Email</p>
     </div>
-    
+    <div class="row">
+        <a class="btn btn-danger col-2" asp-page="ResultDelete" 
+           asp-route-isDelete="1"
+           asp-route-id="@Model.Contact.Id"
+           >TAK</a>
+        <a class="btn btn-secondary col-2" asp-page="ResultDelete" asp-route-isDelete="0">NIE</a>
+    </div>
 }
 
