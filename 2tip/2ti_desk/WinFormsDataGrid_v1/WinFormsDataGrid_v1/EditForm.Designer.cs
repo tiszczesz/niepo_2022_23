@@ -36,6 +36,8 @@
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.btnSave = new System.Windows.Forms.Button();
+            this.btnCancel = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -102,11 +104,32 @@
             this.label4.TabIndex = 6;
             this.label4.Text = "Stanowisko";
             // 
+            // btnSave
+            // 
+            this.btnSave.Location = new System.Drawing.Point(12, 243);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(158, 40);
+            this.btnSave.TabIndex = 8;
+            this.btnSave.Text = "Zapisz";
+            this.btnSave.UseVisualStyleBackColor = true;
+            // 
+            // btnCancel
+            // 
+            this.btnCancel.Location = new System.Drawing.Point(185, 243);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(162, 40);
+            this.btnCancel.TabIndex = 9;
+            this.btnCancel.Text = "Anuluj";
+            this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            // 
             // EditForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(359, 328);
+            this.Controls.Add(this.btnCancel);
+            this.Controls.Add(this.btnSave);
             this.Controls.Add(this.textBox4);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.textBox3);
@@ -115,6 +138,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "EditForm";
             this.Text = "EditForm";
             this.ResumeLayout(false);
@@ -132,5 +156,7 @@
         private TextBox textBox3;
         private TextBox textBox4;
         private Label label4;
+        private Button btnSave;
+        private Button btnCancel;
     }
 }

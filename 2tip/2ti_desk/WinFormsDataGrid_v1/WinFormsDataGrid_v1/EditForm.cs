@@ -16,5 +16,10 @@ namespace WinFormsDataGrid_v1
         {
             InitializeComponent();
         }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }

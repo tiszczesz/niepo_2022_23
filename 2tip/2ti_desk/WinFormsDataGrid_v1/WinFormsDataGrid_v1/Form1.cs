@@ -21,5 +21,10 @@ namespace WinFormsDataGrid_v1
         private void dgvWorkers_SelectionChanged(object sender, EventArgs e) {
             btnEdit.Enabled = true;
         }
+
+        private void btnEdit_Click(object sender, EventArgs e) {
+            EditForm ef = new EditForm();
+            ef.ShowDialog();
+        }
     }
 }
