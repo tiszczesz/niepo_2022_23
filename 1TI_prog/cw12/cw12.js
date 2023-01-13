@@ -15,3 +15,15 @@ for(let i=1;i<=5;i++){
 }
 
 document.body.appendChild(ol);
+
+/*
+1. poprosić uzytkownika o rozmiar tablicy i zweryfikować czy jest w przedziale 2..50
+2. Wypełnic taka tablicę losowymi liczbami całkowitymi z przedziału 0..200
+3. Wypisać w liście nie uporządkowanej napis: {liczba z tablicy} do kwadratu = .....
+    użyć createElement
+
+
+
+
+
+*/
