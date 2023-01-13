@@ -31,10 +31,10 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.tbFirstName = new System.Windows.Forms.TextBox();
+            this.tbLastName = new System.Windows.Forms.TextBox();
+            this.tbSlary = new System.Windows.Forms.TextBox();
+            this.tbJob = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
@@ -67,33 +67,33 @@
             this.label3.TabIndex = 2;
             this.label3.Text = "Pensja";
             // 
-            // textBox1
+            // tbFirstName
             // 
-            this.textBox1.Location = new System.Drawing.Point(117, 39);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(155, 23);
-            this.textBox1.TabIndex = 3;
+            this.tbFirstName.Location = new System.Drawing.Point(117, 39);
+            this.tbFirstName.Name = "tbFirstName";
+            this.tbFirstName.Size = new System.Drawing.Size(155, 23);
+            this.tbFirstName.TabIndex = 3;
             // 
-            // textBox2
+            // tbLastName
             // 
-            this.textBox2.Location = new System.Drawing.Point(117, 86);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(155, 23);
-            this.textBox2.TabIndex = 4;
+            this.tbLastName.Location = new System.Drawing.Point(117, 86);
+            this.tbLastName.Name = "tbLastName";
+            this.tbLastName.Size = new System.Drawing.Size(155, 23);
+            this.tbLastName.TabIndex = 4;
             // 
-            // textBox3
+            // tbSlary
             // 
-            this.textBox3.Location = new System.Drawing.Point(117, 143);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(155, 23);
-            this.textBox3.TabIndex = 5;
+            this.tbSlary.Location = new System.Drawing.Point(117, 143);
+            this.tbSlary.Name = "tbSlary";
+            this.tbSlary.Size = new System.Drawing.Size(155, 23);
+            this.tbSlary.TabIndex = 5;
             // 
-            // textBox4
+            // tbJob
             // 
-            this.textBox4.Location = new System.Drawing.Point(117, 194);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(155, 23);
-            this.textBox4.TabIndex = 7;
+            this.tbJob.Location = new System.Drawing.Point(117, 194);
+            this.tbJob.Name = "tbJob";
+            this.tbJob.Size = new System.Drawing.Size(155, 23);
+            this.tbJob.TabIndex = 7;
             // 
             // label4
             // 
@@ -130,17 +130,18 @@
             this.ClientSize = new System.Drawing.Size(359, 328);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnSave);
-            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.tbJob);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.tbSlary);
+            this.Controls.Add(this.tbLastName);
+            this.Controls.Add(this.tbFirstName);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "EditForm";
             this.Text = "EditForm";
+            this.Load += new System.EventHandler(this.EditForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -151,10 +152,10 @@
         private Label label1;
         private Label label2;
         private Label label3;
-        private TextBox textBox1;
-        private TextBox textBox2;
-        private TextBox textBox3;
-        private TextBox textBox4;
+        private TextBox tbFirstName;
+        private TextBox tbLastName;
+        private TextBox tbSlary;
+        private TextBox tbJob;
         private Label label4;
         private Button btnSave;
         private Button btnCancel;

@@ -20,11 +20,22 @@ namespace WinFormsDataGrid_v1
 
         private void dgvWorkers_SelectionChanged(object sender, EventArgs e) {
             btnEdit.Enabled = true;
+            panel2.Visible = true;
         }
 
         private void btnEdit_Click(object sender, EventArgs e) {
-            EditForm ef = new EditForm();
+            Worker? worker = getSelectedRow();
+            EditForm ef = new EditForm(worker);
             ef.ShowDialog();
+        }
+
+        private Worker? getSelectedRow() {
+            if (dgvWorkers.SelectedRows.Count != 1) {
+                return null;
+            }
+
+            return dgvWorkers.SelectedRows[0].DataBoundItem as Worker ;
+
         }
     }
 }
