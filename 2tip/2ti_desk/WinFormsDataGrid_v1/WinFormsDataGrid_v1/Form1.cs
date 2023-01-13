@@ -37,5 +37,7 @@ namespace WinFormsDataGrid_v1
             return dgvWorkers.SelectedRows[0].DataBoundItem as Worker ;
 
         }
+
+       
     }
 }

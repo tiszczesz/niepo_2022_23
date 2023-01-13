@@ -31,6 +31,17 @@ namespace WinFormsDataGrid_v1
             tbLastName.Text = _worker?.LastName;
             tbSlary.Text = _worker?.Salary.ToString();
             tbJob.Text = _worker?.Job;
+            
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            if (_worker == null) {
+                //zapisywanie do datagridview
+            }
+            else {
+                // todo
+            }
         }
     }
 }
