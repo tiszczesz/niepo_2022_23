@@ -41,7 +41,7 @@
             <div>@ViewBag.result</div>
             
 
-            if (ViewBag.isOKPswd && ViewBag.dane!=null) {
+            if (ViewBag?.isOKPswd && ViewBag?.dane!=null) {
                 
                     string srcPhoto = $"/media/{(ViewBag.dane as Dane).Zdjecie}";
                     int a = 12;

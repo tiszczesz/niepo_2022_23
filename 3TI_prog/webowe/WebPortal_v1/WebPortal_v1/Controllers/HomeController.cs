@@ -48,6 +48,7 @@ namespace WebPortal_v1.Controllers
                 }
                 else {
                     ViewBag.result = "login nie istnieje";
+                    ViewBag.isOKPswd = false;
                 }
             }
             else {
