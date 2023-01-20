@@ -16,7 +16,7 @@ namespace cw8_WebRazor.Pages
         public void OnGet(int? id)
         {
             if (id != null) {
-                Contact = MyRepo.Contacts.Find(c => c.Id == id);
+                Contact = MyRepo.GetById(id);
             }
         }
     }

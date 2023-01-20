@@ -61,5 +61,10 @@
 
             return null;
         }
+
+        public Contact? GetById(int? id) {
+            if (id == null) return null;
+            return Contacts.FirstOrDefault(c => c.Id == id);
+        }
     }
 }
