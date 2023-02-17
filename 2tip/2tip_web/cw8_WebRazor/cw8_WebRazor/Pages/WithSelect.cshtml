@@ -1,0 +1,87 @@
+﻿@page
+@model cw8_WebRazor.Pages.WithSelectModel
+@{
+}
+<h1>Dodaj pracownika</h1>
+<form method="post">
+    <div class="row m-2">
+        <label class="col-2" asp-for="@Model.MyWorker.FirstName"></label>
+        <input class="col-4" asp-for="@Model.MyWorker.FirstName" />
+        <span class="text-danger col-6" asp-validation-for="@Model.MyWorker.FirstName"></span>
+    </div>
+    <div class="row m-2">
+        <label class="col-2" asp-for="@Model.MyWorker.LastName"></label>
+        <input class="col-4" asp-for="@Model.MyWorker.LastName" />
+        <span class="text-danger col-6" asp-validation-for="@Model.MyWorker.LastName"></span>
+    </div>
+    @* <div class="row m-2">
+    <label class="col-2" asp-for="@Model.MyWorker.Workplace"></label>
+    <select asp-for="@Model.MyWorker.Workplace" class="col-4">
+    @foreach (var elem in Model.WorkerPlaces)
+    {
+    <option value="@elem">@elem</option>
+    }
+    </select>
+    </div>
+    *@
+    <div class="row m-2">
+        <label class="col-2" asp-for="@Model.MyWorker.Workplace"></label>
+        <select asp-for="@Model.MyWorker.Workplace" class="col-4"
+                asp-items="@Model.WorkerPlace2"> </select>
+    </div>
+
+    <div class="row m-2">
+        <label class="col-2" asp-for="@Model.MyWorker.Salary"></label>
+        <input type="number" class="col-4" asp-for="@Model.MyWorker.Salary" />
+        <span class="text-danger col-6" asp-validation-for="@Model.MyWorker.Salary"></span>
+    </div>
+    @* <div class="row m-2">
+        <label class="col-2" asp-for="@Model.MyWorker.Gender"></label>
+        <div class="col-6">
+            @foreach (string g in Model.Genders)
+            {
+                <input type="radio" value="@g" asp-for="@Model.MyWorker.Gender">
+                @g <br />
+            }
+        </div>
+    </div>
+
+    <div class="row m-2">
+        <label class="col-2" asp-for="@Model.MyWorker.Hobbies"></label>
+        <div class="col-6">
+            @for (int i = 0; i < Model.MyWorker.Hobbies.Count; i++)
+            {
+                <input type="checkbox" asp-for="@Model.MyWorker.Hobbies[i].IsChecked" />
+                @Model.MyWorker.Hobbies[i].Name <br />
+                <input type="hidden" asp-for="@Model.MyWorker.Hobbies[i].Name" />
+
+            }
+        </div>
+    </div>
+    *@
+    <div class="row m-2">
+
+        <input type="submit" class="offset-2 col-6 btn btn-primary" value="Dodaj" />
+
+    </div>
+</form>
+
+@if(ViewData["post"]!=null){
+    <div>
+        Przyjęto nowego pracownika: @Model.MyWorker.FirstName @Model.MyWorker.LastName
+        na stanowisko @Model.MyWorker.Workplace z pensją: @Model.MyWorker.Salary
+        płeć pracownika: @*@Model.MyWorker.Gender*@
+    </div>
+    @*@if((Model.MyWorker.Hobbies.Where(w=>w.IsChecked)).ToList().Count>0){
+        <ul>
+            @foreach(var h in Model.MyWorker.Hobbies){
+                if(h.IsChecked){
+                    <li>@h.Name</li>
+                }
+            }
+        </ul>
+    }else{
+        <div>Brak zainteresowań</div>
+    }
+    *@
+}
