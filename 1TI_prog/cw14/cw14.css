@@ -1,0 +1,13 @@
+img{
+    /* height: 100px; */
+
+}
+.books{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.card:hover{
+    background-color: lightgrey;
+    cursor: pointer;
+}
