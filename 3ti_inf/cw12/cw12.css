@@ -1,0 +1,19 @@
+.container{
+    width: 1000px;
+    margin: auto;
+}
+.elem{
+    width: 400px;
+    height: 400px;
+    background-color: lightgreen;
+    border: solid 1px darkcyan;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.text{
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: darkgreen;
+    text-align: center;
+}
