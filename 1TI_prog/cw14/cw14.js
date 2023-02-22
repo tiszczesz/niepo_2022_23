@@ -63,12 +63,20 @@ console.log(cards);
 cards.forEach((v,i)=>{
     v.addEventListener("mouseenter",(event)=>{
        // console.log("mouseenter: ",event.target);
-        const book = books.filter((b)=>{b.id==v.id});
+      //  console.log(v.id);
+        const book = books.filter((b)=>{
+            return b.id===v.id;  //dodoałem return
+        });
         console.log(book);
-       // info.innerHTML = books[event.target.id];
+        info.innerHTML = `<h3>Wybrana książka:</h3> Tytuł: <span class='content'>${book[0].title}</span>
+        <br>
+        Autor: <span class='content'>${book[0].author}</span>
+        <br>
+        Cena: <span class='content'>${book[0].price} zł</span>`;
     });
     v.addEventListener("mouseleave",(event)=>{
         console.log("mouseleave: ",event.target.firstChild.innerHTML);
         info.innerHTML = "";
+        
     });
 })
