@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Czas generowania: 25 Sty 2023, 13:56
+-- Czas generowania: 22 Lut 2023, 13:01
 -- Wersja serwera: 10.4.22-MariaDB
 -- Wersja PHP: 8.1.2
 
@@ -29,6 +29,7 @@ USE `3ti_users_v1`;
 -- Struktura tabeli dla tabeli `permisions`
 --
 
+DROP TABLE IF EXISTS `permisions`;
 CREATE TABLE `permisions` (
   `id` int(11) NOT NULL,
   `name` varchar(50) COLLATE utf8_polish_ci NOT NULL
@@ -42,7 +43,11 @@ INSERT INTO `permisions` (`id`, `name`) VALUES
 (1, 'odczyt z pliku'),
 (2, 'zapis do pliku'),
 (3, 'tworzenie użytkowników'),
-(4, 'zmiana uprawnień użytkownika');
+(4, 'zmiana uprawnień użytkownika'),
+(5, 'Usuwanie uprawnień'),
+(6, 'Modyfikacja uprawnień'),
+(7, 'grzebanie w nosie'),
+(8, 'przeszkadzanie na lekcji');
 
 -- --------------------------------------------------------
 
@@ -50,6 +55,7 @@ INSERT INTO `permisions` (`id`, `name`) VALUES
 -- Struktura tabeli dla tabeli `roles`
 --
 
+DROP TABLE IF EXISTS `roles`;
 CREATE TABLE `roles` (
   `id` int(11) NOT NULL,
   `name` varchar(50) COLLATE utf8_polish_ci NOT NULL
@@ -61,7 +67,9 @@ CREATE TABLE `roles` (
 
 INSERT INTO `roles` (`id`, `name`) VALUES
 (1, 'admin'),
-(2, 'user');
+(2, 'user'),
+(3, 'nowa1'),
+(4, 'nowa2');
 
 -- --------------------------------------------------------
 
@@ -69,6 +77,7 @@ INSERT INTO `roles` (`id`, `name`) VALUES
 -- Struktura tabeli dla tabeli `role_permisions`
 --
 
+DROP TABLE IF EXISTS `role_permisions`;
 CREATE TABLE `role_permisions` (
   `id` int(11) NOT NULL,
   `role_id` int(11) NOT NULL,
@@ -83,7 +92,11 @@ INSERT INTO `role_permisions` (`id`, `role_id`, `permision_id`) VALUES
 (1, 1, 3),
 (2, 1, 4),
 (3, 2, 1),
-(4, 2, 2);
+(4, 2, 2),
+(5, 1, 5),
+(6, 1, 6),
+(7, 3, 7),
+(8, 4, 8);
 
 -- --------------------------------------------------------
 
@@ -91,6 +104,7 @@ INSERT INTO `role_permisions` (`id`, `role_id`, `permision_id`) VALUES
 -- Struktura tabeli dla tabeli `users`
 --
 
+DROP TABLE IF EXISTS `users`;
 CREATE TABLE `users` (
   `id` int(11) NOT NULL,
   `firstname` varchar(50) COLLATE utf8_polish_ci NOT NULL,
@@ -105,7 +119,8 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`id`, `firstname`, `lastname`, `email`, `role_id`) VALUES
 (1, 'Jan', 'Nowak', 'nowak@gmail.com', 1),
-(2, 'Adam', 'Wtopa', 'wtopa@opoczta.pl', 2);
+(2, 'Adam', 'Wtopa', 'wtopa@opoczta.pl', 2),
+(3, 'Tomasz', 'Bomasz', 'bomasz@gmail.com', 1);
 
 --
 -- Indeksy dla zrzutów tabel
@@ -146,25 +161,25 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT dla tabeli `permisions`
 --
 ALTER TABLE `permisions`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT dla tabeli `roles`
 --
 ALTER TABLE `roles`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT dla tabeli `role_permisions`
 --
 ALTER TABLE `role_permisions`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT dla tabeli `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- Ograniczenia dla zrzutów tabel
