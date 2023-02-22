@@ -9,7 +9,8 @@
     <title>Document</title>
 </head>
 <body>
-    <?php
+    <div class="container">
+         <?php
         spl_autoload_register(function (string $classname){
             require_once strtolower($classname).'.class.php';
         });
@@ -19,5 +20,27 @@
         //echo UsersToHTML::toTable($db->users);
         echo UsersToHTML::toTableUserRoles($db->usersLoadWithRole());
     ?>
+    <div class="row">
+        <div class="col-4">
+            <?php
+                echo RoleToHtml::GetRoleInList($db->getRole(),"ol")
+            ?>
+        </div>
+        <div class="col-8">
+            <?php
+            if(filter_has_var(INPUT_GET,'id')){
+                $id = filter_input(INPUT_GET,'id');
+                echo $db->getRoleById($id);
+            }else{
+                echo "<div>Tu będą uprawnienia dla danej roli....po kliknięciu w rolę</div>";
+            }
+            ?>
+        </div>
+        <div>
+            <a href="cw11_admin.php">Operacje na uprawnieniach</a>
+        </div>
+    </div>
+    </div>
+   
 </body>
 </html>

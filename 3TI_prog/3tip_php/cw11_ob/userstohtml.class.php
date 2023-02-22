@@ -17,7 +17,9 @@ class UsersToHTML{
             $html .= "<tr>"
                ."\t<td>{$u->user->firstname}</td>\n"
                ."\t<td>{$u->user->lastname}</td>\n"
-               ."\t<td>{$u->user->email}</td>\n</tr>\n";               
+               ."\t<td>{$u->user->email}</td>"
+               ."\t<td>{$u->role->getRoleName()}</td>\n"
+               ."\n</tr>\n";               
         }
 
         return $html."</table>";

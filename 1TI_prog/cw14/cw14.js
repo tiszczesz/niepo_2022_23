@@ -1,5 +1,6 @@
 class Book {
-    constructor(image, author, year, price) {
+    constructor(id,image, author, year, price) {
+        this.id  = id
         this.title = this.GetTitle(image);
         this.image = image;
         this.author = author;
@@ -11,6 +12,7 @@ class Book {
     }
     BookToCard(){
         const card = document.createElement("div");
+        card.id = this.id;
         card.className = "card m-2";
         card.style.width = "250px";
         const cardBody = document.createElement("div");
@@ -31,7 +33,7 @@ class Book {
 function GenerBook() {
     const books = [];
     booksInfo.forEach((v, i) => {
-        books.push(new Book(v[0], v[1], v[2], v[3]))
+        books.push(new Book(`id_${i}`,v[0], v[1], v[2], v[3]))
     });
     return books;
 }
@@ -55,14 +57,18 @@ const bookDiv = document.querySelector(".books");
 books.forEach((v,i)=>{
     bookDiv.appendChild(v.BookToCard());
 });
-
+const info = document.querySelector(".info");
 const cards = document.querySelectorAll(".card");
 console.log(cards);
 cards.forEach((v,i)=>{
     v.addEventListener("mouseenter",(event)=>{
-        console.log("mouseenter: ",event.target);
+       // console.log("mouseenter: ",event.target);
+        const book = books.filter((b)=>{b.id==v.id});
+        console.log(book);
+       // info.innerHTML = books[event.target.id];
     });
     v.addEventListener("mouseleave",(event)=>{
         console.log("mouseleave: ",event.target.firstChild.innerHTML);
+        info.innerHTML = "";
     });
 })
