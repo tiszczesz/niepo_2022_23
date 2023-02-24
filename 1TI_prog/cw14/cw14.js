@@ -40,7 +40,7 @@ function GenerBook() {
 
 const booksInfo = [
     ["C 10 i .NET 6 dla programistów aplikacji wieloplatformowych.jpg"
-        , "Antoni Małecki", 2021, 67.90],
+        , "Antoni Małecki", 2021, 67.90,"nkg fydh jcfhjg fhgg jhgjfjhgjfhj hj"],
     ["C++ Zbiór zadań z rozwiązaniami.jpg", "Roman Bałecki", 2019, 45.90],
     ["Czysty Agile. Powrót do podstaw.jpg", "Roman Bałecki", 2019, 89.90],
     ["Etyczny haking.jpg", "Roman Bałecki", 2017, 69.90],
@@ -64,7 +64,7 @@ cards.forEach((v,i)=>{
     v.addEventListener("mouseenter",(event)=>{
        // console.log("mouseenter: ",event.target);
       //  console.log(v.id);
-        const book = books.filter((b)=>{
+        const book = books.filter((b)=>{      // (x,y)=>(x+y)
             return b.id===v.id;  //dodoałem return
         });
         console.log(book);
