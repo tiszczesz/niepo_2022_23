@@ -1,0 +1,21 @@
+.container{
+    margin: auto;
+    width: 1200px;
+}
+h1{
+    text-align: center;
+    border-bottom: 1px green solid;
+}
+.gift{
+    width: 1000px;
+    height: 700px;
+    padding: 20px;
+    background-color: lightyellow;
+}
+footer{
+    height: 30px;
+    background-color: darkorange;
+    color: white;
+    text-align: center;
+    padding: 8px;
+}
