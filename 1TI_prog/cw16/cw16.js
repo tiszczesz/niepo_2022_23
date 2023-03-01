@@ -239,8 +239,10 @@ class User{
         this.email = email;
         this.phone = phone;
         this.website = website;
+        this.image = "media/face.png"
     }
     toCard(){
-        //generuje card w html na podstawie danych z obieku 
+        return `<img src='${this.image}' alt='obrazek'>`
     }
 }
+document.querySelector("#result").innerHTML = new User("","","","","","").toCard();
