@@ -1,0 +1,1 @@
+﻿Scaffold-DbContext "Server=localhost;Database=3ti_prog_baza;User=root;Password=;" Pomelo.EntityFrameworkCore.MySql

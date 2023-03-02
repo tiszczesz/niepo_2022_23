@@ -245,4 +245,15 @@ class User{
         return `<img src='${this.image}' alt='obrazek'>`
     }
 }
-document.querySelector("#result").innerHTML = new User("","","","","","").toCard();
+function getUsers(dane){
+    const users = [];
+    dane.forEach(element => {
+       // console.log(element);
+        users.push(new User(element.id,element.name,element.username,element.email
+            ,element.phone,element.website));
+    });
+    return users;
+}
+const myUsers = getUsers(myApiData);
+console.log(myUsers);
+document.querySelector("#result").innerHTML = myUsers[0].toCard();
