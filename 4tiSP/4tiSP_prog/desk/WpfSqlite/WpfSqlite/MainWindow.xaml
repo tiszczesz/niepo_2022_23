@@ -10,7 +10,7 @@
         <CollectionViewSource x:Key="categoryViewSource"/>
         <CollectionViewSource 
             x:Key="categoryProductsViewsource"
-            Source="{Binding Products,Source={StaticResource categoryProductsViewsource}}"
+            Source="{Binding Products,Source={StaticResource categoryViewSource}}"
             />
     </Window.Resources>
     <Grid>
@@ -27,6 +27,24 @@
                 <DataGridTextColumn Binding="{Binding Name}" 
                                     Width="*" Header="Nazwa kategorii"/>    
             </DataGrid.Columns>
+        </DataGrid>
+        <DataGrid x:Name="productsDataGrid" 
+                  AutoGenerateColumns="False"
+                  EnableRowVirtualization="True"
+                  ItemsSource="{Binding Source={StaticResource categoryProductsViewsource}}"
+                  Margin="12,200,40,250">
+            <DataGrid.Columns>
+                 <DataGridTextColumn 
+                     Binding="{Binding CategoryId}"
+                     Header="Id kategorii" Width="SizeToHeader" IsReadOnly="True"/>
+                 <DataGridTextColumn Binding="{Binding ProductId}"
+                                     Header="Id produktu" Width="SizeToHeader"
+                                     IsReadOnly="True"/>
+                 <DataGridTextColumn Binding="{Binding Name}" Width="*"/>
+            </DataGrid.Columns>
+               
+                
+                
         </DataGrid>
     </Grid>
 </Window>
