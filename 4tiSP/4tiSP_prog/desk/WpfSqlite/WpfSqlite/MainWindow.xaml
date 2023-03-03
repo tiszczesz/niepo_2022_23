@@ -5,11 +5,11 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfSqlite"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="550" Width="800" Loaded="Window_Loaded">
     <Window.Resources>
         <CollectionViewSource x:Key="categoryViewSource"/>
         <CollectionViewSource 
-            x:Key="categoryProductsViewsource"
+            x:Key="categoryProductsViewSource"
             Source="{Binding Products,Source={StaticResource categoryViewSource}}"
             />
     </Window.Resources>
@@ -17,7 +17,7 @@
         <DataGrid x:Name="categoryDataGrid" AutoGenerateColumns="False"
                   EnableRowVirtualization="True"
                   ItemsSource="{Binding Source={StaticResource categoryViewSource}}"
-                  Margin="14,14,45,200"
+                  Margin="14,14,45,300"
                   RowDetailsVisibilityMode="VisibleWhenSelected">
             <DataGrid.Columns>
                 <DataGridTextColumn 
@@ -31,8 +31,8 @@
         <DataGrid x:Name="productsDataGrid" 
                   AutoGenerateColumns="False"
                   EnableRowVirtualization="True"
-                  ItemsSource="{Binding Source={StaticResource categoryProductsViewsource}}"
-                  Margin="12,200,40,250">
+                  ItemsSource="{Binding Source={StaticResource categoryProductsViewSource}}"
+                  Margin="12,250,40,100">
             <DataGrid.Columns>
                  <DataGridTextColumn 
                      Binding="{Binding CategoryId}"
@@ -42,9 +42,10 @@
                                      IsReadOnly="True"/>
                  <DataGridTextColumn Binding="{Binding Name}" Width="*"/>
             </DataGrid.Columns>
-               
-                
-                
         </DataGrid>
+        <Button Content="Zapisz" 
+                HorizontalAlignment="Center"
+                Margin="0,390,0,0"
+                Height="30" Width="130" Click="ButtonSave"/>
     </Grid>
 </Window>
