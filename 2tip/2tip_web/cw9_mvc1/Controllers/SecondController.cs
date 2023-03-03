@@ -9,7 +9,9 @@ public class SecondController : Controller {
         return View(users);
     }
     public IActionResult Index2(){
-        
+        ViewBag.actionName = this.ControllerContext.RouteData.Values["action"]?.ToString();
+        ViewBag.controllerName = this.ControllerContext.RouteData
+                                .Values["controller"]?.ToString();
         return View();
     }
 }
