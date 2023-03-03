@@ -25,7 +25,8 @@
                     Header="Id kategorii" Width="SizeToHeader"
                     IsReadOnly="True"/>
                 <DataGridTextColumn Binding="{Binding Name}" 
-                                    Width="*" Header="Nazwa kategorii"/>    
+                                    Width="*" 
+                                    Header="Nazwa kategorii"/>    
             </DataGrid.Columns>
         </DataGrid>
         <DataGrid x:Name="productsDataGrid" 
