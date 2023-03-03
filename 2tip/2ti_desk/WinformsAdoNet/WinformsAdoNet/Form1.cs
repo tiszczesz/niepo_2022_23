@@ -1,5 +1,6 @@
 using System.Configuration;
 using System.Data.SqlClient;
+using System.Globalization;
 using WinformsAdoNet.Models;
 
 namespace WinformsAdoNet
@@ -53,6 +54,35 @@ namespace WinformsAdoNet
                     MessageBox.Show(ex.Message);
                 }
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            new AddWindow(this).ShowDialog();
+        }
+
+        public void SaveToDb(string title, string place, decimal? price)
+        {
+            using (SqlConnection conn = new SqlConnection(connString)) {
+               
+                string sql = $"INSERT INTO Course(Title,Place,Price) VALUES('{title}', '{place}', '{Convert.ToString(price, CultureInfo.InvariantCulture)}')";
+                MessageBox.Show(sql);
+                SqlCommand command = new SqlCommand(sql, conn);
+                try {
+                    conn.Open();
+                    command.ExecuteNonQuery();
+                    Courses.Add(new Course{Title = title,Place = place,Price = price});
+                }
+                catch (Exception ex) {
+                    MessageBox.Show(ex.Message);
+                }
+                finally {
+                    conn.Close();
+                }
+            }
+
+            dataGridView1.DataSource = null;
+            dataGridView1.DataSource = Courses;
         }
     }
 }

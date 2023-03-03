@@ -30,7 +30,9 @@
         {
             dataGridView1 = new DataGridView();
             panel1 = new Panel();
+            button1 = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            panel1.SuspendLayout();
             SuspendLayout();
             // 
             // dataGridView1
@@ -47,11 +49,22 @@
             // panel1
             // 
             panel1.BackColor = SystemColors.ActiveCaption;
-            panel1.Dock = DockStyle.Left;
+            panel1.Controls.Add(button1);
+            panel1.Dock = DockStyle.Fill;
             panel1.Location = new Point(594, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(200, 450);
+            panel1.Size = new Size(206, 450);
             panel1.TabIndex = 1;
+            // 
+            // button1
+            // 
+            button1.Location = new Point(6, 12);
+            button1.Name = "button1";
+            button1.Size = new Size(197, 37);
+            button1.TabIndex = 0;
+            button1.Text = "Dodaj nowy kurs";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
             // Form1
             // 
@@ -64,6 +77,7 @@
             Text = "Form1";
             Load += Form1_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            panel1.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -71,5 +85,6 @@
 
         private DataGridView dataGridView1;
         private Panel panel1;
+        private Button button1;
     }
 }
