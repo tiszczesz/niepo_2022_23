@@ -1,6 +1,6 @@
 const t1 = ["ala ma kota","inny element","blblbl"];
 document.querySelector("#add").onclick = function(){
-    //todo
+    //todo  t1.push(.....)
 };
 function generList(dane){
     let html = "<ul>";

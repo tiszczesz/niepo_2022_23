@@ -14,7 +14,8 @@ namespace Ark2_pomMVC.Controllers
             _db = db;
         }
         public IActionResult Index() {
-            var dane1 = _db.Kliencis.Include(k => k.Opinies).Include(o=>o.Typy).Where(k=>(k.Typy.Id==2 && k.Typy.Id==3)).ToList();
+            var dane1 = _db.Kliencis.Include(k => k.Opinies)
+                .Where(k=>(k.TypyId==2 || k.TypyId==3)).ToList();
 
             return View();
         }
