@@ -20,9 +20,13 @@ function getElements(tab,count){
     return html;
 }
 t1.push("nowy na końcu tablicy");
+console.log(t1, " po dodaniu na koniec");
 document.querySelector("#info3").innerHTML = getElements(t1,t1.length);
-t1.unshift("na początek tablicy");
+t1.unshift("na początek tablicy"," po dodaniu na początku");
 document.querySelector("#info4").innerHTML = getElements(t1,t1.length);
 //usuwanie z końca tablicy
 t1.pop();
-console.log(t1);
+console.log(t1," po usunieciu z konca");
+//usuwanie z początku
+t1.shift();
+console.log(t1," po usunieciu z początku");
