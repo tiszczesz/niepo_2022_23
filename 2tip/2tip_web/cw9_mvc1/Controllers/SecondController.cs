@@ -14,4 +14,8 @@ public class SecondController : Controller {
                                 .Values["controller"]?.ToString();
         return View();
     }
+    public IActionResult Index3(){
+        string name =  "Alojzy Gąbka";
+        return View("Inny",name);
+    }
 }

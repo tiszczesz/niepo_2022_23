@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Tworzenie pustego projektu</title>
+        <style>
+/* From extension vscode.github */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.vscode-dark img[src$=\#gh-light-mode-only],
+.vscode-light img[src$=\#gh-dark-mode-only] {
+	display: none;
+}
+
+</style>
+        
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+<style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+.task-list-item {
+    list-style-type: none;
+}
+
+.task-list-item-checkbox {
+    margin-left: -20px;
+    vertical-align: middle;
+    pointer-events: none;
+}
+</style>
+        
+    </head>
+    <body class="vscode-body vscode-light">
+        <h1 id="tworzenie-pustego-projektu">Tworzenie pustego projektu</h1>
+<pre><code class="language-console">dotnet new web -o nazwaProjektu
+</code></pre>
+<h1 id="w-pliku-programcs">W pliku Program.cs</h1>
+<ol>
+<li>Ustawiamy używanie MVC</li>
+</ol>
+<pre><code class="language-cs"><span class="hljs-keyword">var</span> builder = WebApplication.CreateBuilder(args);
+builder.Services.AddControllersWithViews();<span class="hljs-comment">// tutaj dodajemy obsługę MVC</span>
+<span class="hljs-keyword">var</span> app = builder.Build();
+
+app.UseStaticFiles();<span class="hljs-comment">// włączamy obsługę plików statycznych</span>
+app.MapControllerRoute(<span class="hljs-comment">// ustawiamy endpoints</span>
+    name: <span class="hljs-string">&quot;default&quot;</span>,<span class="hljs-comment">//</span>
+    pattern: <span class="hljs-string">&quot;{controller=First}/{action=Index}/{id?}&quot;</span><span class="hljs-comment">//</span>
+);<span class="hljs-comment">//</span>
+
+app.Run();
+</code></pre>
+<h1 id="dla-wygody-dodajemy-vieimports">Dla wygody dodajemy Vieimports</h1>
+<pre><code class="language-console">dotnet new viewimports // w katalogy Views
+</code></pre>
+<h1 id="dodajemy-katalog-wwwroot-oraz-controllers-oraz-views">dodajemy katalog wwwroot oraz Controllers oraz Views</h1>
+<h1 id="tworzymy-nowy-kontroler-jako-klasę-didziczącą-z-controller">Tworzymy nowy kontroler jako klasę didziczącą z Controller</h1>
+<h1 id="wstawiamy-do-kontrolera-akcje-jako-metody-publiczne">Wstawiamy do kontrolera akcje jako metody publiczne</h1>
+<h1 id="w-katalogu-views-dodajem-y-katalog-z-nazwą-kontrolera-oraz-widoki-dla-akcji">W katalogu Views dodajem y katalog z nazwą kontrolera oraz widoki dla akcji</h1>
+
+        
+        
+    </body>
+    </html>
