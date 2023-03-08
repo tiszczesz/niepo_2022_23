@@ -47,7 +47,19 @@
     <?php
         $rows = 45;
         $cols = 30;
-        
+
+?>
+
+<h3>Pętla do{...}while(...)</h3>
+<?php
+    $sum = 0;
+    $min = PHP_INT_MAX;
+    $max = PHP_INT_MIN;
+    do{
+        $losowa = rand(0,50);
+        echo $losowa.' ';
+    }while($losowa!=0);
+
 ?>
 </body>
 </html>

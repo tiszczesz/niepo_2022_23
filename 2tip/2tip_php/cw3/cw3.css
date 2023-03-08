@@ -1,0 +1,8 @@
+form{
+    padding: 20px;
+    margin: 20px;
+    border: solid 1px gray;
+}
+.line{margin: 10px;}
+label{display: inline-block; width: 200px;margin-right: 5px;text-align: right;}
+input[type=submit]{margin-left: 210px;padding: 6px;width: 150px; }
