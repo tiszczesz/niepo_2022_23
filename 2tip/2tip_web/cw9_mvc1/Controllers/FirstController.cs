@@ -6,6 +6,18 @@ public class FirstController : Controller {
         return "Hello world fffff";
     }
     public IActionResult Index2(){
-        return View();
+        List<User> users = new List<User>(){
+            new User{Login="Adam",Email = "gg@hh.pl",true},
+            new User{Login="Adam2",Email = "gg2@hh.pl",false},
+            new User{Login="Adam3",Email = "gg3@hh.pl",false},
+            new User{Login="Adam4",Email = "gg4@hh.pl",true},
+        };
+        return View(users);
     }
+}
+
+public class User{
+    public string Login { get; set; }
+    public string Email { get; set; }
+    public bool IsAccepted { get; set; }
 }
