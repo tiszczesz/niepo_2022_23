@@ -7,10 +7,10 @@ public class FirstController : Controller {
     }
     public IActionResult Index2(){
         List<User> users = new List<User>(){
-            new User{Login="Adam",Email = "gg@hh.pl",true},
-            new User{Login="Adam2",Email = "gg2@hh.pl",false},
-            new User{Login="Adam3",Email = "gg3@hh.pl",false},
-            new User{Login="Adam4",Email = "gg4@hh.pl",true},
+            new User{Login="Adam",Email = "gg@hh.pl",IsAccepted=true},
+            new User{Login="Adam2",Email = "gg2@hh.pl",IsAccepted=false},
+            new User{Login="Adam3",Email = "gg3@hh.pl",IsAccepted=false},
+            new User{Login="Adam4",Email = "gg4@hh.pl",IsAccepted=true},
         };
         return View(users);
     }
