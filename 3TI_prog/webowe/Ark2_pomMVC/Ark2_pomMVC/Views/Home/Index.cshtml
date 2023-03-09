@@ -1,4 +1,5 @@
-﻿
+﻿@using Ark2_pomMVC.Data
+@model List<Ark2_pomMVC.Data.Klienci>
 @{
     Layout = null;
 }
@@ -28,6 +29,13 @@
     </div>";
     }
         ?>*@
+    @foreach (var elem in Model) {
+        <div class="opinia">
+            <img src="~/images/@elem.Zdjecie" alt="klient"/>
+            <blockquote>@elem.Opinies.ToList()[0].Opinia</blockquote>
+            <h4>@elem.Imie</h4>
+        </div>
+    }
 </main>
 <footer>
     <section id="one"> 
@@ -41,6 +49,9 @@
             <?php $q="SELECT imie, nazwisko, punkty FROM klienci ORDER BY punkty DESC LIMIT 3;" ;// wybór klientów z najwiekszymi statystykami $res=mysqli_query($con, $q); while($row=mysqli_fetch_array($res)) { echo "<li>$row[0] $row[1], $row[2]</li>";
             }
                 ?>*@
+            @foreach (Klienci k in ViewBag.BestClients) {
+                <li>@k.Imie @k.Nazwisko @k.Punkty</li>
+            }
         </ol>
     </section>
     <section id="three">

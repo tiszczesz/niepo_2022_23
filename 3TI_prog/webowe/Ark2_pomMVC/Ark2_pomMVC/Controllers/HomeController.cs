@@ -14,10 +14,12 @@ namespace Ark2_pomMVC.Controllers
             _db = db;
         }
         public IActionResult Index() {
+            var best = _db.Kliencis.OrderByDescending(k=>k.Punkty).Take(3).ToList();
+            ViewBag.BestClients = best;
             var dane1 = _db.Kliencis.Include(k => k.Opinies)
                 .Where(k=>(k.TypyId==2 || k.TypyId==3)).ToList();
 
-            return View();
+            return View(dane1);
         }
     }
 }
