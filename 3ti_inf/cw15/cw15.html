@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="cw15.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <main class="container">
+      <section>
+        <form>
+          <fieldset>
+            <legend>Wybór opcji</legend>
+            <div class="line">
+                <label for="size">Rozmiar czcionki:</label> <span id="show">10px</span>
+              <input
+                type="range"   id="size"                
+                min="10"  max="50"
+              />
+            </div>
+            <div class="line">
+              <label for="colors">Kolor czcionki</label>
+              <select id="colors">
+                <option value="black" selected>czarny</option>
+                <option value="red">czerwony</option>
+                <option value="green">zielony</option>
+                <option value="blue">niebieski</option>
+                <option value="yellow">żółty</option>
+              </select>
+            </div>
+            <div class="line">
+                <label for="colors">Rodzaj czcionki</label><br>
+                <input type="checkbox" id="bold" value="bold"> <label>pogrubione</label><br />
+                <input type="checkbox" id="italic" value="italic"> <label>pochylone</label><br />
+                <input type="checkbox" id="underline" value="underline"> <label>podkreślone</label><br />
+              </div>             
+          </fieldset>
+        </form>
+        <article id="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae tempora nobis quas enim, optio corrupti quia expedita in deleniti iste voluptatibus voluptatem ullam repudiandae ipsa eveniet? Voluptatibus necessitatibus animi maxime.</article>
+      </section>
+    </main>
+
+    <script src="cw15.js" defer></script>
+  </body>
+</html>
