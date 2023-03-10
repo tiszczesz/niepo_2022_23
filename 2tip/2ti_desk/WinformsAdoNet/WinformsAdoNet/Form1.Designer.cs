@@ -31,6 +31,7 @@
             dataGridView1 = new DataGridView();
             panel1 = new Panel();
             button1 = new Button();
+            button2 = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             panel1.SuspendLayout();
             SuspendLayout();
@@ -40,15 +41,18 @@
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Dock = DockStyle.Left;
             dataGridView1.Location = new Point(0, 0);
+            dataGridView1.MultiSelect = false;
             dataGridView1.Name = "dataGridView1";
             dataGridView1.ReadOnly = true;
             dataGridView1.RowTemplate.Height = 25;
+            dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridView1.Size = new Size(594, 450);
             dataGridView1.TabIndex = 0;
             // 
             // panel1
             // 
             panel1.BackColor = SystemColors.ActiveCaption;
+            panel1.Controls.Add(button2);
             panel1.Controls.Add(button1);
             panel1.Dock = DockStyle.Fill;
             panel1.Location = new Point(594, 0);
@@ -65,6 +69,16 @@
             button1.Text = "Dodaj nowy kurs";
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
+            // 
+            // button2
+            // 
+            button2.Location = new Point(6, 55);
+            button2.Name = "button2";
+            button2.Size = new Size(197, 37);
+            button2.TabIndex = 1;
+            button2.Text = "Usuń wybrany kurs";
+            button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
             // 
             // Form1
             // 
@@ -86,5 +100,6 @@
         private DataGridView dataGridView1;
         private Panel panel1;
         private Button button1;
+        private Button button2;
     }
 }

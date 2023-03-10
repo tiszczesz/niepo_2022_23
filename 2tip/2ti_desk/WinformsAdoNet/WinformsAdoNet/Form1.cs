@@ -1,5 +1,6 @@
 using System.Configuration;
 using System.Data.SqlClient;
+using System.Diagnostics;
 using System.Globalization;
 using WinformsAdoNet.Models;
 
@@ -21,7 +22,7 @@ namespace WinformsAdoNet
         private void Form1_Load(object sender, EventArgs e)
         {
             LoadData();
-            dataGridView1.DataSource = Courses;
+           
         }
 
         private void LoadData()
@@ -53,6 +54,7 @@ namespace WinformsAdoNet
                 {
                     MessageBox.Show(ex.Message);
                 }
+                RefrashGrid();
             }
         }
 
@@ -61,28 +63,75 @@ namespace WinformsAdoNet
             new AddWindow(this).ShowDialog();
         }
 
-        public void SaveToDb(string title, string place, decimal? price)
-        {
-            using (SqlConnection conn = new SqlConnection(connString)) {
-               
+        public void SaveToDb(string title, string place, decimal? price) {
+            using (SqlConnection conn = new SqlConnection(connString))
+            {
+
                 string sql = $"INSERT INTO Course(Title,Place,Price) VALUES('{title}', '{place}', '{Convert.ToString(price, CultureInfo.InvariantCulture)}')";
-                MessageBox.Show(sql);
+               // MessageBox.Show(sql);
                 SqlCommand command = new SqlCommand(sql, conn);
-                try {
+                try
+                {
                     conn.Open();
                     command.ExecuteNonQuery();
-                    Courses.Add(new Course{Title = title,Place = place,Price = price});
+                    Courses.Add(new Course { Title = title, Place = place, Price = price });
                 }
-                catch (Exception ex) {
+                catch (Exception ex)
+                {
                     MessageBox.Show(ex.Message);
                 }
-                finally {
+                finally
+                {
                     conn.Close();
                 }
             }
 
+            RefrashGrid();
+        }
+
+        private void RefrashGrid() {
             dataGridView1.DataSource = null;
+
             dataGridView1.DataSource = Courses;
+            dataGridView1.Columns[0].Visible = false;
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridView1.Columns["Price"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            var selectedCourse = dataGridView1.SelectedRows[0].DataBoundItem as Course;
+            if (selectedCourse != null) {
+                DeleteFromCourse(selectedCourse);
+            }
+        }
+
+        private void DeleteFromCourse(Course selectedCourse)
+        {
+            using (SqlConnection conn = new SqlConnection(connString))
+            {
+
+                string sql = $"DELETE FROM Course WHERE Id={selectedCourse.Id}";
+                //MessageBox.Show(sql);
+                SqlCommand command = new SqlCommand(sql, conn);
+                try
+                {
+                    conn.Open();
+                    command.ExecuteNonQuery();
+                    Courses.Remove(selectedCourse);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+                finally
+                {
+                    conn.Close();
+                }
+            }
+
+            RefrashGrid();
+
         }
     }
 }
