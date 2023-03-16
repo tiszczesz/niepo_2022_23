@@ -13,6 +13,7 @@
         </Grid.ColumnDefinitions>
         <StackPanel Orientation="Vertical">
             <Button Content="Wczytaj dane" Margin="20" Height="30" Click="Button_Click"/>
+            <Button Content="Nowe okno" Height="30" Click="ButtonBase_OnClick" Margin="20,10,20,10"/>
         </StackPanel>
         <DataGrid x:Name="dataGrid" Grid.Column="1" d:ItemsSource="{d:SampleData ItemCount=5}" ColumnWidth="*" IsReadOnly="True" SelectionMode="Single"/>
 

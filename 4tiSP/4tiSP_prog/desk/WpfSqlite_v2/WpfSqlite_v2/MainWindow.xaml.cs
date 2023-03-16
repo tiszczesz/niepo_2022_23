@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using SDKSample;
 using WpfSqlite_v2.Models;
 
 namespace WpfSqlite_v2
@@ -33,6 +34,10 @@ namespace WpfSqlite_v2
             
             dataGrid.ItemsSource = games;
             dataGrid.Columns[0].Visibility = Visibility.Hidden;
+        }
+
+        private void ButtonBase_OnClick(object sender, RoutedEventArgs e) {
+            new SecondWindow().ShowDialog();
         }
     }
 }
