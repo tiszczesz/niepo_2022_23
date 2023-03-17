@@ -30,8 +30,8 @@
         {
             dataGridView1 = new DataGridView();
             panel1 = new Panel();
-            button1 = new Button();
             button2 = new Button();
+            button1 = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             panel1.SuspendLayout();
             SuspendLayout();
@@ -48,6 +48,7 @@
             dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridView1.Size = new Size(594, 450);
             dataGridView1.TabIndex = 0;
+            dataGridView1.DoubleClick += dataGridView1_DoubleClick;
             // 
             // panel1
             // 
@@ -60,16 +61,6 @@
             panel1.Size = new Size(206, 450);
             panel1.TabIndex = 1;
             // 
-            // button1
-            // 
-            button1.Location = new Point(6, 12);
-            button1.Name = "button1";
-            button1.Size = new Size(197, 37);
-            button1.TabIndex = 0;
-            button1.Text = "Dodaj nowy kurs";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
-            // 
             // button2
             // 
             button2.Location = new Point(6, 55);
@@ -79,6 +70,16 @@
             button2.Text = "Usuń wybrany kurs";
             button2.UseVisualStyleBackColor = true;
             button2.Click += button2_Click;
+            // 
+            // button1
+            // 
+            button1.Location = new Point(6, 12);
+            button1.Name = "button1";
+            button1.Size = new Size(197, 37);
+            button1.TabIndex = 0;
+            button1.Text = "Dodaj nowy kurs";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
             // Form1
             // 

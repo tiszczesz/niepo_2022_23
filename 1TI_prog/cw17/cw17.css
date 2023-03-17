@@ -9,4 +9,4 @@
 }
 .bold{ font-weight: bold;}
 .italic{font-style: italic;}
-.bordered{border: solid 1px dashed green;}
+.bordered{border: 1px dashed green;}

@@ -13,7 +13,7 @@ namespace WinformsAdoNet
         public Form1()
         {
             InitializeComponent();
-            Courses = new List<Course>();
+            
             connString = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=AppCourses;Integrated Security=True";
             //SqlConnection conn = new SqlConnection(connString);
             //conn.Open();
@@ -22,13 +22,14 @@ namespace WinformsAdoNet
         private void Form1_Load(object sender, EventArgs e)
         {
             LoadData();
-           
+
         }
 
         private void LoadData()
         {
             using (SqlConnection conn = new SqlConnection(connString))
             {
+                Courses = new List<Course>();
                 string sql = "SELECT * FROM Course";
                 SqlCommand command = new SqlCommand(sql, conn);
                 try
@@ -63,12 +64,13 @@ namespace WinformsAdoNet
             new AddWindow(this).ShowDialog();
         }
 
-        public void SaveToDb(string title, string place, decimal? price) {
+        public void InserToDb(string title, string place, decimal? price)
+        {
             using (SqlConnection conn = new SqlConnection(connString))
             {
 
                 string sql = $"INSERT INTO Course(Title,Place,Price) VALUES('{title}', '{place}', '{Convert.ToString(price, CultureInfo.InvariantCulture)}')";
-               // MessageBox.Show(sql);
+                // MessageBox.Show(sql);
                 SqlCommand command = new SqlCommand(sql, conn);
                 try
                 {
@@ -86,10 +88,38 @@ namespace WinformsAdoNet
                 }
             }
 
-            RefrashGrid();
+            LoadData();
+        }
+        public void UpdateToDb(string title, string place, decimal? price,int id )
+        {
+            using (SqlConnection conn = new SqlConnection(connString))
+            {
+
+                string sql = $"UPDATE  Course SET Title='{title}',Place='{place}',"
+                             +$"Price='{Convert.ToString(price, CultureInfo.InvariantCulture)}' WHERE Id={id}";
+                // MessageBox.Show(sql);
+                SqlCommand command = new SqlCommand(sql, conn);
+                try
+                {
+                    conn.Open();
+                    command.ExecuteNonQuery();
+                    
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+                finally
+                {
+                    conn.Close();
+                }
+            }
+
+            LoadData();
         }
 
-        private void RefrashGrid() {
+        private void RefrashGrid()
+        {
             dataGridView1.DataSource = null;
 
             dataGridView1.DataSource = Courses;
@@ -101,7 +131,8 @@ namespace WinformsAdoNet
         private void button2_Click(object sender, EventArgs e)
         {
             var selectedCourse = dataGridView1.SelectedRows[0].DataBoundItem as Course;
-            if (selectedCourse != null) {
+            if (selectedCourse != null)
+            {
                 DeleteFromCourse(selectedCourse);
             }
         }
@@ -132,6 +163,15 @@ namespace WinformsAdoNet
 
             RefrashGrid();
 
+        }
+
+        private void dataGridView1_DoubleClick(object sender, EventArgs e) {
+            AddWindow win = new AddWindow(this,true);
+            win.ShowDialog();
+        }
+
+        public DataGridView GetDataGridView() {
+            return dataGridView1;
         }
     }
 }
