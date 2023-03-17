@@ -1,0 +1,12 @@
+.black{background-color: black; color: white;}
+.green{background-color: green;color: lightgreen;}
+.red{background-color: red;color: lightgrey;}
+.blue{background-color: blue;color: lightblue;}
+.yellow{background-color: yellow;color: darkblue;}
+
+.underline{
+    text-decoration: underline;
+}
+.bold{ font-weight: bold;}
+.italic{font-style: italic;}
+.bordered{border: solid 1px dashed green;}
