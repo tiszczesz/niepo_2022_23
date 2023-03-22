@@ -1,0 +1,79 @@
+*{
+    font-family:Garamond;
+    text-align: center;
+}
+
+body{
+    background-color: lavender;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+
+}
+
+#baner,
+#stopka{
+    background-color: #af8eb5;
+    color: white;
+    padding:10px;
+    width: 100%;
+}
+
+#lewy,
+#prawy,
+#srodkowy{
+    background-color: #e1bee7;
+    width: 30%;
+    height: 500px;
+    padding-top: 40px;
+    margin: 15px;
+    box-shadow: 10px 10px 10px dimgray;
+}
+
+a{
+    color: indigo;
+    font-size: 150%;
+    padding: 10px;
+    font-weight: bold;
+}
+
+a:hover{
+    background-color: indigo;
+    color: white;
+}
+
+img,
+table{
+    border: 1px solid;
+    width: 80%;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    margin-left: auto;
+    margin-right: auto;
+}
+img{
+    height: 300px;
+    filter: grayscale(100);
+}
+
+form{
+    margin-left: 140px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 50%;
+    height: 100%;
+    
+}
+
+input,
+label,
+select{
+    font-size: large;
+}
+
+input,
+select{
+    margin-bottom: 20px;
+}
