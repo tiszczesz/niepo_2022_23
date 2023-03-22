@@ -10,3 +10,6 @@ checks.forEach((v,i)=>{
         document.querySelector("#second").classList.toggle(e.target.value);
     });
 });
+
+console.log(mm);
+console.log(ff);

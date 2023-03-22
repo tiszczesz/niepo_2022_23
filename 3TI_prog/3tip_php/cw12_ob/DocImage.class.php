@@ -10,5 +10,6 @@ class DocImage extends Document implements Printable {
         echo "<p>Drukowanie obrazka ".
                " szerokość: {$this->width} wysokość: {$this->height}</p>";
     }
-    pu
+    
 }
+
