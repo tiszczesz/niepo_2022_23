@@ -1,0 +1,33 @@
+﻿@model List<Car>
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="~/css/site.css"/>
+    <title>Index</title>
+</head>
+<body>
+<h1>Lista samochodów</h1>
+<div class="container">
+    <table class="table">
+        <tr>
+            <th>Nazwa</th>
+            <th>Przebieg (km)</th>
+            <th>Cena (zł)</th>
+        </tr>
+        @foreach (var c in Model) {
+            <tr>
+                <td>@c.Name</td>
+                <td>@c.Distance</td>
+                <td>@c.Price</td>
+            </tr>
+        }
+    </table>
+</div>
+</body>
+</html>
