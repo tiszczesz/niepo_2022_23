@@ -8,7 +8,7 @@ namespace MVC_cw2.Models
         [Required(ErrorMessage = "Musisz podać zakres")]
         [Range(2,3000000,ErrorMessage = "liczby z przedziału 2..3000000")]
         public int? Limit { get; set; }
-        public List<int> Primals { get; set; }
+        
         public bool IsPrimal(int number) {
             if (number < 2) return false;
             for (int i = 2; i * i <= number; i++) {
@@ -22,7 +22,6 @@ namespace MVC_cw2.Models
             for (int i = 2; i <= limit; i++) {
                 if(IsPrimal(i)) primals.Add(i);
             }
-            Primals = primals;
             return primals;
         }
     }
