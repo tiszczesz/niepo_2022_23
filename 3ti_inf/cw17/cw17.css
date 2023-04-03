@@ -13,3 +13,6 @@ tr:nth-child(even){
 th{
     background-color: darksalmon;    
 }
+.right{
+    text-align: right;
+}
