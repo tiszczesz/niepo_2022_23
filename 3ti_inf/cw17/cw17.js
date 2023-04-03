@@ -27,7 +27,13 @@ for (const row of games) {
     myGames.push(new Game(row[0], row[1], row[2], row[3]));
 }
 console.log(myGames);
-const table = document.querySelector(".table");
-for (const g of myGames) {
-    g.AddToTable(table);
+
+function generTable() {
+    const table = document.querySelector(".table");
+    for (const g of myGames) {
+        g.AddToTable(table);
+    }
+    totalRow = table.insertRow();
+    totalRow.innerHTML = `<td>Cena całkowita</td><td colspan='3'>---</td>`;
 }
+generTable();
