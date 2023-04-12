@@ -1,4 +1,4 @@
-﻿
+﻿@model NWDCounter
 @{
     ViewData["Title"] = "Index";
 }
@@ -6,3 +6,18 @@
 <h1>Największy wspólny dzielnik</h1>
 tu zrobić formularz i skorzystać z modelu (najpierw go napisać i przetestować)
 
+<form method="post">
+    <div class="row m-2">
+        <label class="col-3 text-end" for="A" asp-for="A"></label>
+        <input asp-for="A" type="number" class="col-3" />
+        <span class="col-6 error" asp-validation-for="A"></span>
+    </div>
+    <div class="row m-2">
+        <label class="col-3 text-end" for="B" asp-for="B"></label>
+        <input asp-for="B" type="number" class="col-3" />
+        <span class="col-6 error" asp-validation-for="B"></span>
+    </div>
+    <div class="row m-2">
+        <input type="submit" class="btn btn-primary offset-3 col-3" value="Oblicz" />
+    </div>
+</form>
