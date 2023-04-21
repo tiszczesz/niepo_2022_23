@@ -11,12 +11,13 @@ namespace MVC_cw2.Controllers
             return View();
         }
         [HttpPost]
-        public IActionResult Index(NWDCounter nwd)
-        {
+        public IActionResult Index(NWDCounter nwd) {
+            
             if (ModelState.IsValid) {
-
+                ViewBag.Result = "post";
+                nwd.Result = nwd.GetNWD(nwd.A, nwd.B);
             }
-            return View();
+            return View(nwd);
         }
     }
 }

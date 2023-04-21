@@ -8,12 +8,12 @@ tu zrobić formularz i skorzystać z modelu (najpierw go napisać i przetestowa�
 
 <form method="post">
     <div class="row m-2">
-        <label class="col-3 text-end" for="A" asp-for="A"></label>
+        <label class="col-3 text-end"  asp-for="A"></label>
         <input asp-for="A" type="number" class="col-3" />
         <span class="col-6 error" asp-validation-for="A"></span>
     </div>
     <div class="row m-2">
-        <label class="col-3 text-end" for="B" asp-for="B"></label>
+        <label class="col-3 text-end"  asp-for="B"></label>
         <input asp-for="B" type="number" class="col-3" />
         <span class="col-6 error" asp-validation-for="B"></span>
     </div>
@@ -21,3 +21,13 @@ tu zrobić formularz i skorzystać z modelu (najpierw go napisać i przetestowa�
         <input type="submit" class="btn btn-primary offset-3 col-3" value="Oblicz" />
     </div>
 </form>
+
+@if (ViewBag.Result != null) {
+    <div class="bg-light p-3">
+        Obliczony wynik: NWD( @Model.A, @Model.B ) = @Model.Result
+    </div>
+}
+@section Scripts{
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+}

@@ -22,15 +22,16 @@ namespace MVC_cw2.Models
 
         public int GetNWD(int? a, int? b) {
             if (a != null && b != null) {
-                int temp = 0;
                 while (b!=0) {
-                    temp = (int) a;
+                    int temp = (int)a;
                     a = b;
                     b = temp%b;
                 }
 
+                
                 return (int)a;
             }
+
             
             return 0;
         }
