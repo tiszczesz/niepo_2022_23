@@ -13,6 +13,7 @@ class PrimalGenerator{
         const primals = [];
         let n = 2;
         while(primals.length<this.limit){
+            debugger
             if(this.isPrimal(n)){
                 primals.push(n)
             }
