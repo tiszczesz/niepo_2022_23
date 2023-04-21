@@ -12,18 +12,51 @@ class PrimalGenerator{
     GetPrimalList(){
         const primals = [];
         let n = 2;
+        let html = "";
         while(primals.length<this.limit){
-            debugger
+            //debugger
             if(this.isPrimal(n)){
                 primals.push(n)
+                html += n+ " ";
             }
             n++;
         }
-        return primals;
+        return [primals,html];
+    }
+    GetPrimalObject(){
+        const primals = [];
+        let n = 2;
+        let html = "";
+        while(primals.length<this.limit){
+            //debugger
+            if(this.isPrimal(n)){
+                primals.push(n)
+                html += n+ " ";
+            }
+            n++;
+        }
+        return {"list":primals,"text":html};
     }
 }
 
-const generator = new PrimalGenerator(30);
-console.log(generator);
-console.log(generator.isPrimal(25));
-console.log(generator.GetPrimalList());
+function GetPersonObject(firstname,lastname,age){
+        //zwraca obiekt z 3 polami 
+}
+function GetPersonArray(firstname,lastname,age){
+    //zwraca tablice z 3 polami 
+}
+$("#gener").click(()=>{
+    //alert("dffdfdfdf");
+    $n = $("#n");
+    $("#result").html("");
+    const generator = new PrimalGenerator($n.val());
+    const primes = generator.GetPrimalList();
+    // primes.forEach((e)=>{
+    //     $("#result").html($("#result").html()+" "+e);
+    // });
+    console.log(primes);
+    $("#result").html(primes[1]);
+    console.log(generator.GetPrimalObject().list);
+    $("#result2").html(generator.GetPrimalObject().text)
+});
+
