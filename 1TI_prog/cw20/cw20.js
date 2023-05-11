@@ -41,9 +41,11 @@ class PrimalGenerator{
 
 function GetPersonObject(firstname,lastname,age){
         //zwraca obiekt z 3 polami 
+        return {fname:firstname,lname:lastname,a:age}
 }
 function GetPersonArray(firstname,lastname,age){
-    //zwraca tablice z 3 polami 
+    //zwraca tablice z 3 elemetami 
+    return [firstname,lastname,age]
 }
 $("#gener").click(()=>{
     //alert("dffdfdfdf");
@@ -59,4 +61,18 @@ $("#gener").click(()=>{
     console.log(generator.GetPrimalObject().list);
     $("#result2").html(generator.GetPrimalObject().text)
 });
+function Gg(secret){
+    console.log(`Mój sekret to: ${secret}`);
+    return "Jego wersja";
+}
+function GetSecret(){
+   // return Gg("ala ma kota");
+    return (()=>{Gg("ala ma kota")});
+}
+console.log(GetPersonObject("Adam","Nowak",45));
+console.log(GetPersonArray("Adam","Nowak",45));
+Gg("Rybka");
+const efekt = GetSecret();
+$("#result3").html(efekt());
+//GetSecret()();
 
