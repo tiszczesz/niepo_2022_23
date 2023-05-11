@@ -1,7 +1,8 @@
 fun main(args: Array<String>) {
     println("Hello World!")
-
-    // Try adding program arguments via Run/Debug configuration.
-    // Learn more about running applications: https://www.jetbrains.com/help/idea/running-applications.html.
-    println("Program arguments: ${args.joinToString()}")
+    val content = listOf("ala ma kota","erw rtertert","fggdgdgd d g","gfhfghghfh");
+    val fo = FileOperations();
+    fo.listToFile("dane.txt",content);
+    val dd = fo.fileToList("dane2.txt");
+    dd.forEach{ println(it) }
 }

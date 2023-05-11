@@ -1,0 +1,4 @@
+Write the specified collection of char sequences lines to a file terminating each one with the platform's line separator.
+By default, the file will be overwritten if it already exists, but you can control this behavior with options.
+Write the specified sequence of char sequences lines to a file terminating each one with the platform's line separator.
+By default, the file will be overwritten if it already exists, but you can control this behavior with options.
