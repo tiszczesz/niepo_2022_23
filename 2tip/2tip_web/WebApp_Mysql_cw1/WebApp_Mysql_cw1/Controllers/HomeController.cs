@@ -7,15 +7,19 @@ namespace WebApp_Mysql_cw1.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private UsersRepo _db;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger
+                ,IConfiguration configuration)
         {
             _logger = logger;
+            var connString = configuration.GetConnectionString("MySqlConn");
+            _db = new UsersRepo(connString);
         }
 
-        public IActionResult Index()
-        {
-            return View();
+        public IActionResult Index() {
+            var list = _db.GetAll();
+            return View(list);
         }
 
         public IActionResult Privacy()

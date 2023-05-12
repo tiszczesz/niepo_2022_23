@@ -1,8 +1,16 @@
-﻿@{
+﻿@model List<User>
+@{
     ViewData["Title"] = "Home Page";
 }
+<h1>Lista użytkowników</h1>
+<table class="table table-stripped">
+    <tr>
+        <th>Lp</th>
+        <th>Imię</th>
+        <th>Nazwisko</th>
+        <th>Data utworzenia</th>
+    </tr>
+    @foreach (var row in Model) {
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+    }
+</table>
