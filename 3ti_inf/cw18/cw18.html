@@ -1,42 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="cw18.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="cw18.css" />
     <title>Document</title>
-</head>
-<body>
+  </head>
+  <body>
     <div class="container">
-        <h1>Wskaźnik BMI</h1>
-        <p>Link omawiający Wskaźnik BMI: 
-            <a href="https://www.lightbox.pl/poradnik-lightbox/kalkulatory/bmi">BMI</a>
-            <br />
-            Dodatkowy link: 
-            <a href="https://pl.wikipedia.org/wiki/Wska%C5%BAnik_masy_cia%C5%82a">Link do Wikipedia</a>
-            
-        </p>
-            <!--
+      <h1>Wskaźnik BMI</h1>
+      <p>
+        Link omawiający Wskaźnik BMI:
+        <a href="https://www.lightbox.pl/poradnik-lightbox/kalkulatory/bmi"
+          >BMI</a
+        >
+        <br />
+        Dodatkowy link:
+        <a href="https://pl.wikipedia.org/wiki/Wska%C5%BAnik_masy_cia%C5%82a"
+          >Link do Wikipedia</a
+        >
+      </p>
+      <!--
                 formularz do obliczania BMI 
                 Podajemy masę w kg
                 i wzrost w mewtrach
                 przycisk do obliczenia BMI = (masa)/(wzrost^2)
             -->
-            <div class="line">
-                <label for="masa">Podaj masę w kg</label>
-                <input type="number" name="masa" id="masa" " min="1" max="350">
-            </div>
-            <div class="line">
-                <label for="wzrost">Podaj wzrost w m</label>
-                <input type="number" name="wzrost" id="wzrost" " min="0.1" max="3" step="0.01">
-            </div>
-            <div class="line">                
-                <input type="button" value="OBLICZ BMI" id="run">
-            </div>
-        <div id="result">Tu będzie wynik skryptu</div>
+      <div class="line">
+        <label for="masa">Podaj masę w kg</label>
+        <input type="number" name="masa" id="masa" " min="1" max="350">
+      </div>
+      <div class="line">
+        <label for="wzrost">Podaj wzrost w m</label>
+        <input type="number" name="wzrost" id="wzrost" " min="0.1" max="3"
+        step="0.01">
+      </div>
+      <div class="line">
+        <input type="button" value="OBLICZ BMI" id="run" />
+      </div>
+      <div id="result">Tu będzie wynik skryptu</div>
     </div>
     
     <script src="cw18.js" defer></script>
-</body>
+  </body>
 </html>

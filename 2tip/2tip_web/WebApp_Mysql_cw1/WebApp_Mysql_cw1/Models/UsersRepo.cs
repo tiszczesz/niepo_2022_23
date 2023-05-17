@@ -28,5 +28,17 @@ namespace WebApp_Mysql_cw1.Models
             }
             return list;
         }
+
+        public void AddUser(User user)
+        {
+            List<User> list = new List<User>();
+            using (MySqlConnection conn = new MySqlConnection(_connString))
+            {
+                conn.Open();
+                MySqlCommand command = conn.CreateCommand();
+                
+            }
+            
+        }
     }
 }

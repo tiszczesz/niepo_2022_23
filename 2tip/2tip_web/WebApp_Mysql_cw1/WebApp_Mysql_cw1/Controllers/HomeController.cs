@@ -22,6 +22,18 @@ namespace WebApp_Mysql_cw1.Controllers
             return View(list);
         }
 
+        [HttpGet]
+        public IActionResult AddUser() {
+
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult AddUser(User user) {
+
+            return View();
+        }
+
         public IActionResult Privacy()
         {
             return View();

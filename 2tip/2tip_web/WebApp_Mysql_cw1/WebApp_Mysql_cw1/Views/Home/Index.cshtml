@@ -10,7 +10,14 @@
         <th>Nazwisko</th>
         <th>Data utworzenia</th>
     </tr>
+    @{ int i = 0;}
     @foreach (var row in Model) {
-
+        i++;
+        <tr>
+            <td>@i</td>
+            <td>@row.Firstname</td>
+            <td>@row.Lastname</td>
+            <td>@row.CreateDate?.ToShortDateString()</td>
+        </tr>
     }
 </table>
