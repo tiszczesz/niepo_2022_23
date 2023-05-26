@@ -47,11 +47,13 @@ function createTable(elem,data){
 }
 createTable($("#root"),users);
 $("#find").on("input",(event)=>{
-    console.log(event.target.value);
-    const result = users.filter((elem)=>{
-        return elem.login.toLowerCase().includes(event.target.value.toLowerCase());
-    })
-    $("#root").html("");
-    createTable($("#root"),result)
-    console.log(result);
+    //console.log(event.target.value);
+    
+     const result = users.filter((elem)=>{
+         return elem.login.toLowerCase().includes(event.target.value.toLowerCase());
+         //return true;
+     })
+     $("#root").html("");
+     createTable($("#root"),result)
+    // console.log(result);
 });
