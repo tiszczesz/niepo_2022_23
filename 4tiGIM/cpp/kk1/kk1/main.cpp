@@ -108,8 +108,10 @@ public:
 		cout << "nie znaleziono!!" << endl;
 	}
 	~Tablica()
+
 	{
 		delete[] tablica;
+		tablica = nullptr;
 	}
 };
 
