@@ -78,7 +78,7 @@ public:
 	void Wypelnij()
 	{
 		
-		tablica = new int[wiel];
+		tablica = new int[wiel+1];
 		srand(time(nullptr));
 		for (int i = 0; i < wiel; i++)
 		{
@@ -91,21 +91,26 @@ public:
 		for (int i = 0; i < wiel; i++)
 		{
 			
-			cout << i + 1 << " = " << tablica[i]<<endl;
+			cout <<  tablica[i] ;
+			if(i<(wiel-1)) cout << ',';
 		}
+		cout << endl;
 	}
 	void Wyszukaj(int szukana)
 	{
 		int licznik = 0;
-		while(licznik++ < wiel)
-		{
-			if(tablica[licznik]==szukana)
-			{
-				cout << "znaleziono liczbe: " << szukana << " na miejscu: " << licznik + 1 << endl;
-				return;
-			}
+		tablica[wiel] = szukana;
+		while(tablica[licznik]!=szukana)
+		{			
+			licznik++;	
 		}
-		cout << "nie znaleziono!!" << endl;
+		wyswietl();
+		if(licznik<wiel-1) {
+			cout << "znaleziono liczbe: " << szukana << " na miejscu: " << licznik << endl;
+		}else {
+			cout << "nie znaleziono!!" << endl;
+		}
+		
 	}
 	~Tablica()
 
